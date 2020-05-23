@@ -66,6 +66,15 @@ body {
   justify-content: center;
 }
 
+@media (max-width: 600px) {
+  .containerflex {
+    flex-direction: column;
+  }
+  .about {
+    flex-direction: column;
+  }
+}
+
 .menutitle {
   display: flex;
   flex-direction: column;
