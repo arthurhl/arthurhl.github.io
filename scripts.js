@@ -1,9 +1,35 @@
-const selectElement = (s) => document.querySelector(s);
+$(document).ready(function () {
+  $(".menu-toggler").on("click", function () {
+    $(this).toggleClass("open");
+    $(".top-nav").toggleClass("open");
+  });
 
-selectElement('.open').addEventListener('click', () => {
-  selectElement('.nav-list').classList.add('active');
-});
+  $(".top-nav .nav-link").on("click", function () {
+    $(".menu-toggler").removeClass("open");
+    $(".top-nav").removeClass("open");
+  });
 
-selectElement('.close').addEventListener('click', () => {
-  selectElement('.nav-list').classList.remove('active');
+  $('nav a[href*="#"]').on("click", function () {
+    $("html, body").animate(
+      {
+        scrollTop: $($(this).attr("href")).offset().top - 100,
+      },
+      2000
+    );
+  });
+
+  $("#up").on("click", function () {
+    $("html, body").animate(
+      {
+        scrollTop: 0,
+      },
+      2000
+    );
+  });
+
+  AOS.init({
+    easing: "ease",
+    duration: 1800,
+    once: true,
+  });
 });
