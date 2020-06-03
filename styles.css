@@ -17,7 +17,8 @@ html {
 body {
   width: 100%;
   height: 100%;
-  background: url("./assets/sitebg.jpg") no-repeat center fixed;
+  /* background: url("./assets/sitebg.jpg") no-repeat center fixed; */
+  background-color: #252934;
   background-size: cover;
 }
 
@@ -249,7 +250,8 @@ li {
 }
 
 .profile-img img {
-  width: 95%;
+  width: 100%;
+  height: 100;
   border: 1px solid #38ef7d;
   border-radius: 0%;
 }
@@ -425,7 +427,7 @@ li {
 
 /*Start contact*/
 .contact {
-  background-color: #221e3f;
+  background-color: #252934;
 }
 
 form {
@@ -513,7 +515,8 @@ input[type="submit"]:hover {
 /*Start media queries*/
 @media screen and (max-width: 768px) {
   body {
-    background: url("./assets/sitebg2.jpg") no-repeat center fixed;
+    /* background: url("./assets/sitebg2.jpg") no-repeat center fixed; */
+    background-color: #252934;
     background-size: cover;
   }
 
@@ -563,7 +566,7 @@ input[type="submit"]:hover {
   }
 
   .timeline ul {
-    margin: 0 0 0 auto;
+    margin: 0 0 0 14rem;
   }
 
   .timeline .date::before {
