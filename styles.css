@@ -109,7 +109,7 @@ header {
   position: fixed;
   top: -100vh;
   z-index: 50;
-  background-color: #16162d;
+  background-color: #212121;
   border-bottom-right-radius: 100%;
   border-bottom-left-radius: 100%;
   transition: all 650ms cubic-bezier(1, 0, 0, 1);
@@ -218,6 +218,12 @@ li {
   font-size: 2rem;
   font-weight: 300;
 }
+
+.landing-description i {
+  font-size: 2rem;
+  display: flex;
+  margin: -2rem 0 0 10rem;
+}
 /*End header*/
 
 /*Start about*/
@@ -303,7 +309,7 @@ li {
   height: 10rem;
   border: 3px solid #38ef7d;
   background-color: #11998e;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   display: flex;
   transform: rotate(45deg);
 }
@@ -313,6 +319,42 @@ li {
   font-size: 5rem;
   margin: auto;
   transform: rotate(-45deg);
+}
+
+.techs {
+  margin-top: 2rem;
+  color: #ffffff;
+}
+
+.bar-flex {
+  display: inline-flex;
+  width: 100%;
+  height: 3rem;
+  background-color: #323232;
+  justify-content: start;
+  margin-bottom: 1rem;
+}
+
+.bar-fill {
+  background-color: #11998e;
+  filter: brightness(95%);
+}
+
+.bar-tag {
+  background-color: #11c76f;
+  font-weight: 700;
+  font-size: 1.4rem;
+  width: 10rem;
+  text-align: center;
+  padding-top: 0.6rem;
+}
+
+.bar-flex span {
+  color: #ffffff;
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 0.4rem 0 0 0.4rem;
+  opacity: 0.9;
 }
 /*End services*/
 
@@ -368,7 +410,7 @@ li {
 .timeline ul {
   border-left: 4px solid #38ef7d;
   border-radius: 0.8rem;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: #1b2838;
   margin: 0 auto;
   position: relative;
   padding: 5rem;
@@ -421,7 +463,7 @@ li {
   left: -8rem;
   height: 1.5rem;
   width: 1.5rem;
-  background-color: #313534;
+  background-color: #1b2838;
 }
 /*End timeline*/
 
@@ -469,7 +511,7 @@ input[type="submit"]:hover {
 .copyright {
   width: 100%;
   text-align: center;
-  background-color: #16162d;
+  background-color: #212121;
   padding: 2rem 0;
   position: relative;
 }
@@ -488,9 +530,28 @@ input[type="submit"]:hover {
 }
 
 .up i {
-  color: #16162d;
+  color: #212121;
   font-size: 2rem;
   margin: auto;
+}
+
+.button {
+  background-color: #11c76f;
+  width: 20%;
+  height: 3.8rem;
+  margin-top: 2rem;
+  text-align: center;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: background-color 650ms;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.button:hover {
+  background-color: #11998e;
 }
 
 .copyright p {
@@ -501,7 +562,7 @@ input[type="submit"]:hover {
 /*Start animations*/
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgb(143, 236, 100);
+    box-shadow: 0 0 0 0 rgb(63, 194, 122);
   }
   70% {
     box-shadow: 0 0 0 2rem rgba(253, 87, 191, 0);
