@@ -558,6 +558,12 @@ input[type="submit"]:hover {
   flex: 1;
 }
 
+.button p {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
 .button:hover {
   background-color: #11998e;
 }
