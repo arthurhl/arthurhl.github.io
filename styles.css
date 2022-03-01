@@ -686,7 +686,8 @@ input[type="submit"]:hover {
   .portfolio-img {
     margin: 0 0 2rem 0;
     order: 1;
-    
+    height: 80%;
+    width: 80%;
   }
 
   .portfolio-description {
