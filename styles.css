@@ -48,7 +48,6 @@ input[type="checkbox"] {
   -webkit-appearance: none;
   visibility: hidden;
   display: none;
-
 }
 
 input[type="checkbox"]:checked~.check {
@@ -67,14 +66,15 @@ input[type="checkbox"]:checked~.check:after {
   position: relative;
   margin-top: 5rem;
   margin-left: 5rem;
-  display: block;
+  display: inline-block;
   width: 40px;
   height: 20px;
   background: #11c76f;
   cursor: pointer;
   border-radius: 20px;
-  overflow: hidden;
+ overflow: hidden;
   /* transition: ease-in 0.5s; */
+  
 }
 
 .check:before {
@@ -87,6 +87,7 @@ input[type="checkbox"]:checked~.check:after {
   height: 16px;
   border-radius: 50%;
   transition: 0.2s;
+  
 }
 
 .check:after {
@@ -100,6 +101,8 @@ input[type="checkbox"]:checked~.check:after {
   border-radius: 50%;
   transition: 0.2s;
   transform: translateX(50px);
+ 
+  
 }
 
 /*End global*/
@@ -343,6 +346,7 @@ li {
 .about-details p {
   line-height: 1.6;
   letter-spacing: 2;
+  margin: 0 1rem 0 1rem;
 }
 
 .social-media {
@@ -694,7 +698,7 @@ input[type="submit"]:hover {
 /*End animations*/
 
 /*Start media queries*/
-
+/* 
 @media screen and (min-width: 1700px) {
   .portfolio-description .cta {
 
@@ -830,7 +834,7 @@ input[type="submit"]:hover {
     font-size: 3rem;
   }
 
-}
+} */
 
 
 @media screen and (max-width: 768px) {
@@ -881,7 +885,7 @@ input[type="submit"]:hover {
   }
 
   .icon-container i {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   .timeline ul {
@@ -945,6 +949,7 @@ input[type="submit"]:hover {
 
   .timeline .date::before {
     font-size: 1.4rem;
+  
   }
 
   form {
