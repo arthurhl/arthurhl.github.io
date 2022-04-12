@@ -72,9 +72,9 @@ input[type="checkbox"]:checked~.check:after {
   background: #11c76f;
   cursor: pointer;
   border-radius: 20px;
- overflow: hidden;
+  overflow: hidden;
   /* transition: ease-in 0.5s; */
-  
+
 }
 
 .check:before {
@@ -87,7 +87,7 @@ input[type="checkbox"]:checked~.check:after {
   height: 16px;
   border-radius: 50%;
   transition: 0.2s;
-  
+
 }
 
 .check:after {
@@ -101,8 +101,6 @@ input[type="checkbox"]:checked~.check:after {
   border-radius: 50%;
   transition: 0.2s;
   transform: translateX(50px);
- 
-  
 }
 
 /*End global*/
@@ -321,10 +319,10 @@ li {
   color: var(--descriptiontext);
 }
 
-/* .about-heading h6 {
+ .about-heading h6 {
   font-size: 2rem;
   font-weight: 300;
-} */
+} 
 
 .profile-img {
   flex: 1;
@@ -458,7 +456,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   margin: 0 5rem 5rem 5rem;
   color: var(--descriptiontext);
 }
@@ -617,7 +615,7 @@ input[type="submit"]:hover {
 .copyright {
   width: 100%;
   text-align: center;
- 
+
   background-color: #212121;
   padding: 2rem 0 1rem 0;
   position: relative;
@@ -650,7 +648,7 @@ input[type="submit"]:hover {
 .button {
   background-color: #11c76f;
   height: 3.8rem;
-  max-width: 40rem;
+  max-width: 30rem;
   margin-top: 3rem;
   text-align: center;
   color: var(--descriptiontext);
@@ -836,6 +834,94 @@ input[type="submit"]:hover {
 
 } */
 
+@media screen and (min-width: 1600px) {
+  
+  .check {
+      width: 60px;
+      height: 30px;
+  }
+  .check:before,
+  .check:after {
+  width: 24px;
+  height: 24px;
+  }
+  .menu-toggler {
+    width: 8rem;
+    height: 7rem;
+
+  }
+
+  .landing-text h1 {
+    font-size: 14rem;
+  }
+
+  .landing-text h6 {
+    font-size: 4rem;
+  }
+  .about-heading h1 {
+    font-size: 12rem;
+  }
+  .about-details p {
+    font-size: 2.8rem;
+  }
+  .nav-list i {
+    font-size: 8rem;
+  }
+  .section-heading h1 {
+    font-size: 4.6rem;
+  }
+  .skill {
+    font-size: 1.8rem;
+  }
+  .icon-container {
+    width: 12rem;
+    height: 12rem;
+  }
+  .icon-container i {
+    font-size: 6rem;
+  }
+  .portfolio-description h6{
+    font-size: 2.6rem;
+  }
+  .portfolio-description h1 {
+    font-size: 4rem;
+  }
+  .portfolio-description p {
+    font-size: 2.4rem;
+  }
+  .portfolio-description .cta {
+    font-size: 2.2rem;
+  }
+  .timeline ul {
+    width: 70%;
+  }
+  .timeline h1,p {
+    font-size: 2.8rem;
+  }
+  .timeline .date::before {
+    left: -29rem;
+    font-size: 2.8rem;
+  } 
+  .button {
+    height: 4.2rem;
+ width: 20rem;
+  }
+  .button p {
+    font-size: 2rem;
+  }
+  .copyright p {
+    font-size: 1.8rem;
+   
+  }
+  .up {
+   
+    width: 7rem;
+    height: 7rem;
+   
+    top: -3.8rem;
+   
+  }
+}
 
 @media screen and (max-width: 768px) {
   body {
@@ -949,7 +1035,7 @@ input[type="submit"]:hover {
 
   .timeline .date::before {
     font-size: 1.4rem;
-  
+
   }
 
   form {
