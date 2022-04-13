@@ -319,10 +319,10 @@ li {
   color: var(--descriptiontext);
 }
 
- .about-heading h6 {
+.about-heading h6 {
   font-size: 2rem;
   font-weight: 300;
-} 
+}
 
 .profile-img {
   flex: 1;
@@ -582,6 +582,7 @@ form {
 
 form label {
   font-size: 1.5rem;
+  color: var(--descriptiontext);
 }
 
 input,
@@ -590,14 +591,15 @@ textarea {
   width: 100%;
   padding: 1rem;
   margin-bottom: 5px;
-  border: none;
-  outline-color: #fd57bf;
+  border-radius: 0.8rem;
+  outline-color: #11998e;
+  resize: none;
 }
 
 input[type="submit"] {
   width: initial;
   background-color: #11c76f;
-  color: #ffffff;
+  color: var(--descriptiontext);
   padding: 1rem 2rem;
   border-radius: 0.8rem;
   cursor: pointer;
@@ -646,28 +648,26 @@ input[type="submit"]:hover {
 }
 
 .button {
-  background-color: #11c76f;
-  height: 3.8rem;
-  max-width: 30rem;
   margin-top: 3rem;
   text-align: center;
+  width: initial;
+  background-color: #11c76f;
   color: var(--descriptiontext);
   padding: 1rem 2rem;
   border-radius: 0.8rem;
   cursor: pointer;
   transition: background-color 650ms;
-  font-weight: 700;
-  font-size: 1.4rem;
-  flex: 1;
+ 
 }
 
 .button p {
   font-size: 1.5rem;
   text-align: center;
-  font-weight: 700;
+font-weight: 500;
 }
 
 .button:hover {
+
   background-color: #11998e;
 }
 
@@ -835,16 +835,21 @@ input[type="submit"]:hover {
 } */
 
 @media screen and (min-width: 1600px) {
-  
-  .check {
-      width: 60px;
-      height: 30px;
+  .top-nav a {
+    font-size: 5rem;
   }
+
+  .check {
+    width: 60px;
+    height: 30px;
+  }
+
   .check:before,
   .check:after {
-  width: 24px;
-  height: 24px;
+    width: 24px;
+    height: 24px;
   }
+
   .menu-toggler {
     width: 8rem;
     height: 7rem;
@@ -858,68 +863,87 @@ input[type="submit"]:hover {
   .landing-text h6 {
     font-size: 4rem;
   }
+
   .about-heading h1 {
     font-size: 12rem;
   }
+
   .about-details p {
     font-size: 2.8rem;
   }
+
   .nav-list i {
     font-size: 8rem;
   }
+
   .section-heading h1 {
     font-size: 4.6rem;
   }
+
   .skill {
     font-size: 1.8rem;
   }
+
   .icon-container {
     width: 12rem;
     height: 12rem;
   }
+
   .icon-container i {
     font-size: 6rem;
   }
-  .portfolio-description h6{
+
+  .portfolio-description h6 {
     font-size: 2.6rem;
   }
+
   .portfolio-description h1 {
     font-size: 4rem;
   }
+
   .portfolio-description p {
+    font-size: 2.5rem;
+  }
+
+  .portfolio-description .cta {
     font-size: 2.4rem;
   }
-  .portfolio-description .cta {
-    font-size: 2.2rem;
-  }
+
   .timeline ul {
     width: 70%;
   }
-  .timeline h1,p {
+
+  .timeline h1,
+  p {
     font-size: 2.8rem;
   }
+
   .timeline .date::before {
-    left: -29rem;
-    font-size: 2.8rem;
-  } 
+    left: -28rem;
+    font-size: 2.4rem;
+  }
+
   .button {
-    height: 4.2rem;
- width: 20rem;
+    height: 4.6rem;
+    width: 20rem;
   }
+
   .button p {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
+
   .copyright p {
-    font-size: 1.8rem;
-   
+    font-size: 1.9rem;
+
   }
+
   .up {
-   
+
     width: 7rem;
     height: 7rem;
-   
+
     top: -3.8rem;
-   
+
   }
 }
 
