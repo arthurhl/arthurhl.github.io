@@ -529,11 +529,9 @@ display: flex;
 align-items: center;
 
 }
-.timeline-images {
- margin-right: 2rem;
-}
+
 .timeline-images-odd {
-  margin-right: 5.8rem;
+  margin-right: 3.8rem;
 }
 
 .timeline-items h1 {
@@ -548,8 +546,6 @@ align-items: center;
   margin-left: 4rem;
   flex: 2;
 }
-
-
 
 
 .timeline h1 {
@@ -591,7 +587,7 @@ align-items: center;
 
 .timeline .date::before {
   content: attr(data-date);
-  left: -21rem;
+  left: -23rem;
   text-align: right;
   min-width: 12rem;
   font-size: 1.5rem;
