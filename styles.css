@@ -306,6 +306,11 @@ li {
   margin: -2rem 0 0 10rem;
 }
 
+.img-icon {
+  margin-left: 1rem;
+width: 2%;
+
+}
 /*End header*/
 
 /*Start about*/
@@ -1123,6 +1128,6 @@ justify-items: center;
   .up {
     right: 2rem;
   }
+  
 }
-
 /*End media queries*/
