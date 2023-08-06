@@ -76,19 +76,33 @@ checkbox.addEventListener("change", ({ target }) => {
   localStorage.setItem("color-mode", target.checked);
 });
 
-// Function to set the initial language based on the stored value (default: "pt")
 function setInitialLanguage() {
   var storedLanguage = localStorage.getItem("language");
+  var userLanguage = navigator.language.toLowerCase();
+
   if (storedLanguage && (storedLanguage === "pt" || storedLanguage === "en")) {
     document.documentElement.lang = storedLanguage;
-  } else {
-    // If no language is stored or it's invalid, set "pt" as the default language
+
+    // Update the "Baixar Curriculo" button dynamically
+    const curriculoButton = document.getElementById('curriculoButton');
+
+    if (storedLanguage === 'pt') {
+      curriculoButton.href = './CurriculoArthurHulleLeite.pdf';
+      curriculoButton.download = 'CurriculoArthurHulleLeite';
+    } else if (storedLanguage === 'en') {
+      curriculoButton.href = './CurriculumArthurHulleLeite.pdf';
+      curriculoButton.download = 'CurriculumArthurHulleLeite';
+    }
+  } else if (userLanguage.startsWith("pt")) {
     localStorage.setItem("language", "pt");
     document.documentElement.lang = "pt";
+  } else {
+    localStorage.setItem("language", "en");
+    document.documentElement.lang = "en";
   }
 }
 
-// Function to hide alternative language content on page load
+
 function hideAlternativeLanguage() {
   var currentLanguage = document.documentElement.lang;
   var spans = document.querySelectorAll("[data-lang]");
@@ -103,7 +117,6 @@ function hideAlternativeLanguage() {
   }
 }
 
-// Function to change the language when the button is clicked
 function changeLanguage() {
   var currentLanguage = document.documentElement.lang;
   var spans = document.querySelectorAll("[data-lang]");
@@ -118,14 +131,22 @@ function changeLanguage() {
       span.style.display = "inline";
     }
   }
-
-  // Toggle between "pt" and "en" languages and store the new language in localStorage
   var newLanguage = currentLanguage === "pt" ? "en" : "pt";
   localStorage.setItem("language", newLanguage);
   document.documentElement.lang = newLanguage;
+
+  // Update the "Baixar Curriculo" button dynamically
+  const curriculoButton = document.getElementById('curriculoButton');
+
+  if (newLanguage === 'pt') {
+    curriculoButton.href = './CurriculoArthurHulleLeite.pdf';
+    curriculoButton.download = 'CurriculoArthurHulleLeite';
+  } else if (newLanguage === 'en') {
+    curriculoButton.href = './CurriculumArthurHulleLeite.pdf';
+    curriculoButton.download = 'CurriculumArthurHulleLeite';
+  }
 }
 
-// Call the function to set the initial language and hide alternative language content on page load
 window.addEventListener("DOMContentLoaded", function () {
   setInitialLanguage();
   hideAlternativeLanguage();
