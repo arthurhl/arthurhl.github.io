@@ -90,8 +90,8 @@ function setInitialLanguage() {
       curriculoButton.href = './CurriculoArthurHulleLeite.pdf';
       curriculoButton.download = 'CurriculoArthurHulleLeite';
     } else if (storedLanguage === 'en') {
-      curriculoButton.href = './CurriculumArthurHulleLeite.pdf';
-      curriculoButton.download = 'CurriculumArthurHulleLeite';
+      curriculoButton.href = './ResumeArthurHulleLeite.pdf';
+      curriculoButton.download = 'ResumeArthurHulleLeite';
     }
   } else if (userLanguage.startsWith("pt")) {
     localStorage.setItem("language", "pt");
@@ -135,7 +135,6 @@ function changeLanguage() {
   localStorage.setItem("language", newLanguage);
   document.documentElement.lang = newLanguage;
 
-  // Update the "Baixar Curriculo" button dynamically
   const curriculoButton = document.getElementById('curriculoButton');
 
   if (newLanguage === 'pt') {
