@@ -20,7 +20,6 @@ html {
 body {
   width: 100%;
   height: 100%;
-  /* background: url("./assets/sitebg.jpg") no-repeat center fixed; */
   background-color: var(--colorbackground);
   background-size: cover;
 }
@@ -73,8 +72,6 @@ input[type="checkbox"]:checked~.check:after {
   cursor: pointer;
   border-radius: 20px;
   overflow: hidden;
-  /* transition: ease-in 0.5s; */
-
 }
 
 .check:before {
@@ -709,7 +706,6 @@ font-weight: 500
 
 
 .button:hover {
-
   background-color: #11998e;
 }
 
@@ -740,143 +736,6 @@ font-weight: 500
 /*End animations*/
 
 /*Start media queries*/
-/* 
-@media screen and (min-width: 1700px) {
-  .portfolio-description .cta {
-
-    font-size: 3rem;
-
-  }
-
-  .portfolio-description h6 {
-    font-size: 3.4rem;
-  }
-
-  .portfolio-description h1 {
-    font-size: 6rem;
-  }
-
-  .portfolio-description p {
-    font-size: 3rem;
-  }
-
-  .portfolio-description .cta {
-    font-size: 2.8rem;
-  }
-
-  .profile-img {
-    flex: 1;
-  }
-
-  .section-heading h1 {
-    font-size: 6rem;
-  }
-
-  .icon-container {
-    height: 20rem;
-    width: 20rem;
-
-  }
-
-  .icon-container i {
-    font-size: 10rem;
-  }
-
-  .skill {
-    font-size: 1.4rem;
-  }
-
-  .skill h1 {
-    font-size: 3rem;
-  }
-
-  .about-heading h1 {
-    font-size: 12rem;
-  }
-
-  .about-details p {
-    font-size: 3.2rem;
-  }
-
-  .nav-list i {
-    font-size: 8rem;
-
-  }
-
-  .check {
-    width: 90px;
-    height: 50px;
-  }
-
-  .check:before {
-    top: 2px;
-    left: 2px;
-    width: 40px;
-    height: 44px;
-  }
-
-  .check:after {
-    top: 2px;
-    right: 2px;
-    width: 40px;
-    height: 44px;
-  }
-
-  .menu-toggler {
-    width: 10rem;
-    height: 10rem;
-  }
-
-  .landing-text h1 {
-    font-size: 16rem;
-  }
-
-  .landing-text h6 {
-    font-size: 6rem;
-  }
-
-  .timeline ul {
-    width: 80%;
-
-  }
-
-  .timeline .date {
-    font-size: 4rem;
-  }
-
-  .timeline h1 {
-    font-size: 4.2rem;
-  }
-
-  .timeline p {
-    font-size: 3.8rem;
-  }
-
-.button {
-  height: 6rem;
-  width: 40rem;
-}
-.button p {
-  font-size: 3rem;
-}
-
-  .copyright p {
-    font-size: 2.8rem;
-    height: 6rem;
-
-  }
-
-  .up {
-    width: 8rem;
-    height: 8rem;
-    top: -4.5rem;
-  }
-
-  .up i {
-    font-size: 3rem;
-  }
-
-} */
 
 @media screen and (min-width: 1600px) {
   .top-nav a {
@@ -895,9 +754,8 @@ font-weight: 500
   }
 
   .menu-toggler {
-    width: 8rem;
-    height: 7rem;
-
+    width: 6rem;
+    height: 6rem;
   }
 
   .landing-text h1 {
@@ -978,16 +836,12 @@ font-weight: 500
 
   .copyright p {
     font-size: 1.9rem;
-
   }
 
   .up {
-
     width: 7rem;
     height: 7rem;
-
     top: -3.8rem;
-
   }
 }
 
@@ -1030,7 +884,6 @@ font-weight: 500
 
   .about-details li {
     margin: 0 2rem;
-
   }
 
   .icon-container {
@@ -1105,8 +958,6 @@ font-weight: 500
 justify-items: center;
   }
 
- 
-
   .timeline-images img,
   .timeline-images-odd img{
    margin-left: 4rem;
@@ -1118,7 +969,6 @@ justify-items: center;
 
   .timeline .date::before {
     font-size: 1.4rem;
-
   }
 
   form {
