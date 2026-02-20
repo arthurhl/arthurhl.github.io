@@ -1,242 +1,743 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Arthur Hülle</title>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta -->
+  <title>Arthur H&uuml;lle &mdash; Fullstack Engineer</title>
+  <meta name="description"
+    content="Arthur H&uuml;lle &mdash; Fullstack &amp; Mobile Engineer based in Brazil. C#, .NET, React, Flutter." />
+  <meta name="author" content="Arthur H&uuml;lle" />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Arthur H&uuml;lle &mdash; Fullstack Engineer" />
+  <meta property="og:description" content="Fullstack &amp; Mobile Engineer. C#, .NET, React, Flutter." />
+  <meta property="og:image" content="./assets/profile.jpeg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <header>
-    <label>
-      <input id="switch" type="checkbox" name="theme">
-      <span class="check"></span>
-    </label>
-    <span id="languageButton" onclick="changeLanguage()">
-      <img data-lang="en" class="img-icon" src="./assets/brazil.png" alt="" />
-      <img data-lang="pt" class="img-icon" src="./assets/uk.png" alt="" />
-    </span>
-    <div class="menu-toggler">
-      <div class="bar half start"></div>
-      <div class="bar"></div>
-      <div class="bar half end"></div>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">&#x2715;</button>
+    <a href="#about" onclick="closeMobileNav()" data-en="About" data-pt="Sobre">About</a>
+    <a href="#skills" onclick="closeMobileNav()" data-en="Skills" data-pt="Habilidades">Skills</a>
+    <a href="#experience" onclick="closeMobileNav()" data-en="Experience" data-pt="Experi&ecirc;ncia">Experience</a>
+    <a href="#projects" onclick="closeMobileNav()" data-en="Personal Projects" data-pt="Projetos Pessoais">Personal
+      Projects</a>
+    <a href="#contact" onclick="closeMobileNav()" data-en="Contact" data-pt="Contato">Contact</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">AH<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about" data-en="About" data-pt="Sobre">About</a></li>
+      <li><a href="#skills" data-en="Skills" data-pt="Habilidades">Skills</a></li>
+      <li><a href="#experience" data-en="Experience" data-pt="Experi&ecirc;ncia">Experience</a></li>
+      <li><a href="#projects" data-en="Personal Projects" data-pt="Projetos Pessoais">Personal Projects</a></li>
+      <li><a href="#contact" data-en="Contact" data-pt="Contato">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+        <span class="lang-opt" id="langEN">EN</span>
+        <span class="lang-sep">/</span>
+        <span class="lang-opt" id="langPT">PT</span>
+      </button>
+      <a href="./assets/ResumeArthurHulleLeite.pdf" download="ResumeArthurHulleLeite.pdf" id="resumeBtn"
+        class="nav-resume" data-en="Resume &#x2193;" data-pt="Curr&iacute;culo &#x2193;">Resume &#x2193;</a>
     </div>
-    <nav class="top-nav">
-      <ul class="nav-list-bar">
-        <li>
-          <a href="index.html" class="nav-link" data-lang="pt">Home</a>
-          <a href="index.html" class="nav-link" data-lang="en">Início</a>
-        </li>
-        <li>
-          <a href="#about" class="nav-link" data-lang="pt">Sobre</a>
-          <a href="#about" class="nav-link" data-lang="en">About</a>
-        </li>
-        <li>
-          <a href="#services" class="nav-link" data-lang="pt">Habilidades</a>
-          <a href="#services" class="nav-link" data-lang="en">Skills</a>
-        </li>
-      <!--   <li>
-          <a href="#portfolio" class="nav-link" data-lang="pt">Projetos</a>
-          <a href="#portfolio" class="nav-link" data-lang="en">Projects</a>
-        </li> -->
-        <li>
-          <a href="#experience" class="nav-link" data-lang="pt">Experiência</a>
-          <a href="#experience" class="nav-link" data-lang="en">Experience</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="landing-text">
-      <h1>Arthur Hülle</h1>
-      <h6 data-lang="pt">Desenvolvedor Fullstack | Web | Mobile</h6>
-      <h6 data-lang="en">Fullstack Developer | Web | Mobile</h6>
+    <div class="hamburger" id="hamburger" onclick="openMobileNav()" aria-label="Open menu">
+      <span></span><span></span><span></span>
     </div>
-    <div class="container">
-    </div>
-  </header>
-  <section class="about" id="about">
-    <div class="container">
-      <div class="profile-img">
-        <img src="./assets/profile.jpeg" alt="" />
+  </nav>
+
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-accent-circle"></div>
+
+    <div class="hero-label" data-en="Available for opportunities" data-pt="Dispon&iacute;vel para oportunidades">
+      Available for opportunities</div>
+
+    <h1 class="hero-title">
+      Arthur<br>
+      <span class="line2">H&uuml;lle</span>
+    </h1>
+
+    <div class="hero-bottom">
+      <p class="hero-desc"
+        data-en="Fullstack &amp; Mobile Engineer based in Brazil. I craft fast, elegant digital products &mdash; from pixel-perfect interfaces to robust backend systems."
+        data-pt="Engenheiro Fullstack &amp; Mobile baseado no Brasil. Crio produtos digitais r&aacute;pidos e elegantes &mdash; de interfaces pixel-perfect a sistemas backend robustos.">
+        Fullstack &amp; Mobile Engineer based in Brazil. I craft fast, elegant digital products &mdash; from
+        pixel-perfect interfaces to robust backend systems.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary" data-en="View Work" data-pt="Ver Projetos">View Work</a>
+        <a href="#contact" class="btn-ghost">
+          <span data-en="Get in touch" data-pt="Entre em contato">Get in touch</span>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
       </div>
-      <div class="about-details">
-        <div class="about-heading">
-          <h1 data-lang="pt">Sobre</h1>
-          <h1 data-lang="en">About</h1>
-        </div>
-        <p data-lang="pt">
-          Usuário de GNU/Linux, apaixonado por novas tecnologias, sistemas
-          operacionais e frontend. Um entusiasta do Flutter
-          e eterno aprendiz do CSS, sempre em busca de conhecimento.
-        </p>
-        <p data-lang="en">
-          GNU/Linux user, passionate about new technologies, operating systems,
-          and frontend. A Flutter enthusiast and a perpetual learner of CSS,
-          always seeking knowledge.
-        </p>
-        <div class="social-media">
-          <ul class="nav-list">
-            <li>
-              <a href="https://www.linkedin.com/in/arthurhl/" class="icon-link">
-                <i class="fab fa-linkedin"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/arthurhl" class="icon-link">
-                <i class="fab fa-github"></i>
-              </a>
-            </li>
-            <li>
-              <a href="mailto:arthurleitee@gmail.com" class="icon-link">
-                <i class="fa fa-envelope"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span data-en="Scroll" data-pt="Role">Scroll</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-heading">
-        <h1 data-lang="pt">Habilidades</h1>
-        <h1 data-lang="en">Skills</h1>
+
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-header reveal">
+      <span class="section-num">01</span>
+      <h2 class="section-title" data-en="About" data-pt="Sobre">About</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-photo-wrap reveal">
+        <div class="about-photo">
+          <img src="./assets/profile.jpeg" alt="Arthur H&uuml;lle" />
+        </div>
+        <div class="about-photo-accent"></div>
       </div>
-      <div class="my-skills">
-        <div class="skill">
-          <div class="icon-container">
-            <i class="fas fa-code"></i>
-          </div>
-          <h1 data-lang="pt">Desenvolvimento Fullstack</h1>
-          <h1 data-lang="en">Fullstack Development</h1>
+
+      <div class="about-text reveal" style="transition-delay:0.15s">
+        <div class="about-status">
+          <div class="status-dot"></div>
+          <span data-en="Open to work" data-pt="Aberto a oportunidades">Open to work</span>
         </div>
-        <div class="skill">
-          <div class="icon-container">
-            <i class="fas fa-mobile"></i>
-          </div>
-          <h1 data-lang="pt">Desenvolvimento Mobile</h1>
-          <h1 data-lang="en">Mobile Development</h1>
-        </div>
-        <div class="skill">
-          <div class="icon-container">
-            <i class="fas fa-network-wired"></i>
-          </div>
-          <h1 data-lang="pt">Redes de Computadores</h1>
-          <h1 data-lang="en">Computer Networks</h1>
+
+        <h2 data-en="Software Engineer crafting robust, elegant systems."
+          data-pt="Engenheiro de Software criando sistemas robustos e elegantes.">
+          Software Engineer crafting robust, elegant systems.
+        </h2>
+
+        <p data-en="I'm Arthur &mdash; a Fullstack and Mobile Engineer with hands-on experience building enterprise-grade software across foreign trade, public health, social assistance, and fintech domains. Currently at Dotcode Cloud &amp; Software, working with C#, .NET Core, React, and more."
+          data-pt="Sou Arthur &mdash; Engenheiro Fullstack e Mobile com experi&ecirc;ncia pr&aacute;tica no desenvolvimento de software corporativo nas &aacute;reas de com&eacute;rcio exterior, sa&uacute;de p&uacute;blica, assist&ecirc;ncia social e fintech. Atualmente na Dotcode Cloud &amp; Software, com C#, .NET Core, React e muito mais.">
+          I'm Arthur &mdash; a Fullstack and Mobile Engineer with hands-on experience building enterprise-grade software
+          across foreign trade, public health, social assistance, and fintech domains. Currently at Dotcode Cloud &amp;
+          Software, working with C#, .NET Core, React, and more.
+        </p>
+        <p data-en="GNU/Linux user, passionate about clean architecture, design patterns, and developer tooling. I care deeply about writing maintainable code that scales &mdash; and about the user experience at every layer of the stack."
+          data-pt="Usu&aacute;rio de GNU/Linux, apaixonado por arquitetura limpa, design patterns e ferramentas de desenvolvimento. Me importo com c&oacute;digo manutenível que escala &mdash; e com a experi&ecirc;ncia do usu&aacute;rio em cada camada da stack.">
+          GNU/Linux user, passionate about clean architecture, design patterns, and developer tooling. I care deeply
+          about writing maintainable code that scales &mdash; and about the user experience at every layer of the stack.
+        </p>
+
+        <div class="about-socials">
+          <a href="https://www.linkedin.com/in/arthurhl/" class="social-link" target="_blank" rel="noopener">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.036c.356-.675 1.227-1.387 2.524-1.387 2.704 0 3.203 1.778 3.203 4.092v4.71z" />
+            </svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/arthurhl" class="social-link" target="_blank" rel="noopener">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+            </svg>
+            GitHub
+          </a>
+          <a href="mailto:arthurleitee@gmail.com" class="social-link">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            Email
+          </a>
         </div>
       </div>
+
     </div>
   </section>
- <!--  <section class="portfolio" id="portfolio">
-    <div class="container">
-      <div class="section-heading">
-        <h1 data-lang="pt">Projetos</h1>
-        <h1 data-lang="en">Projects</h1>
-      </div>
-      <div class="portfolio-item">
-        <div class="portfolio-description">
-          <h6 data-lang="pt">Desenvolvimento Web | Desenvolvimento Mobile</h6>
-          <h6 data-lang="en">Web Development | Mobile Development</h6>
-          <h1>PJMEI</h1>
-          <p data-lang="pt">
-            Abra seu MEI, gerencie seu negócio e efetue vendas de forma fácil,
-            rápida e sem burocracia. Tudo isso em um só app.
-          </p>
-          <p data-lang="en">
-            Open your MEI, manage your business, and make sales easily, quickly,
-            and without bureaucracy. All in one app.
-          </p>
-          <a href="https://www.pjmei.app/" class="cta" data-lang="pt">Ver detalhes</a>
-          <a href="https://www.pjmei.app/" class="cta" data-lang="en">View details</a>
-        </div>
-        <div class="portfolio-img">
-          <img src="./assets/3DevicePJMEI.png" alt="" />
-        </div>
-      </div>
-      <div class="portfolio-item">
-        <div class="portfolio-img has-margin-right">
-          <img src="./assets/cardappium1.png" alt="" />
-        </div>
-        <div class="portfolio-description">
-          <h6 data-lang="pt">Desenvolvimento Mobile</h6>
-          <h6 data-lang="en">Mobile Development</h6>
-          <h1>Cardappium</h1>
-          <p data-lang="pt">
-            Frontend de uma aplicação Android de cardápio e pedidos online,
-            estando presencialmente no ambiente.
-          </p>
-          <p data-lang="en">
-            Frontend of an Android application for online menu and ordering,
-            being present in the environment.
-          </p>
-          <a href="https://github.com/arthurhl/Cardappium" class="cta" data-lang="pt">Ver detalhes</a>
-          <a href="https://github.com/arthurhl/Cardappium" class="cta" data-lang="en">View details</a>
-        </div>
-      </div>
+
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-header reveal">
+      <span class="section-num">02</span>
+      <h2 class="section-title" data-en="Skills" data-pt="Habilidades">Skills</h2>
+      <div class="section-line"></div>
     </div>
-  </section> -->
-  <section class="experience" id="experience">
-    <div class="container">
-      <div class="section-heading">
-        <h1 data-lang="pt">Experiência</h1>
-        <h1 data-lang="en">Experience</h1>
-      </div>
-      <div class="timeline">
-        <ul>
-          <li class="date">
-            <div class="timeline-description">
-              <h1>Dotcode Cloud & Software</h1>
-              <p data-lang="pt">Desenvolvedor Fullstack</p>
-              <p data-lang="en">Fullstack Developer</p>
-            </div>
-          </li>
-          <li class="date">
-            <div class="timeline-description">
-              <h1>Captar Consultoria Pública</h1>
-              <p data-lang="pt">Desenvolvedor Fullstack | Desenvolvedor Mobile</p>
-              <p data-lang="en">Fullstack Developer | Mobile Developer</p>
-            </div>
-          </li>
-          <li class="date">
-            <div class="timeline-description">
-              <h1>PJMEI</h1>
-              <p data-lang="pt">Desenvolvedor Mobile | Desenvolvedor Web</p>
-              <p data-lang="en">Mobile Developer | Web Developer</p>
-            </div>
-          </li>
-          <li class="date">
-            <div class="timeline-description">
-              <h1>Instituto Federal do Espírito Santo</h1>
-              <p data-lang="pt">Bacharelado em Sistemas de Informação</p>
-              <p data-lang="en">Bachelor's in Information Systems</p>
-            </div>
-          </li>
+
+    <div class="skills-grid reveal">
+
+      <div class="skill-category">
+        <div class="skill-category-label" data-en="Backend" data-pt="Backend">Backend</div>
+        <ul class="skill-list">
+          <li>C# / .NET Core / .NET Framework</li>
+          <li>Node.js</li>
+          <li>REST APIs &amp; CQRS / MVC</li>
+          <li>RabbitMQ / SignalR</li>
+          <li>Entity Framework / LINQ</li>
         </ul>
       </div>
-    </div>
-    <div class="flex">
-      <a href="./CurriculoArthurHulleLeite.pdf" download="CurriculoArthurHulleLeite" id="curriculoButton">
-        <div class="button">
-          <p data-lang="pt">Currículo</p>
-          <p data-lang="en">Resume</p>
+
+      <div class="skill-category">
+        <div class="skill-category-label" data-en="Frontend" data-pt="Frontend">Frontend</div>
+        <ul class="skill-list">
+          <li>React.js / React Hooks</li>
+          <li>TypeScript / JavaScript</li>
+          <li>HTML5 / CSS3 / SCSS</li>
+          <li>Blazor</li>
+          <li>Bootstrap / DevExtreme</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-category-label" data-en="Mobile" data-pt="Mobile">Mobile</div>
+        <ul class="skill-list">
+          <li>Flutter &amp; Dart</li>
+          <li>React Native</li>
+          <li>iOS (Xcode / App Store)</li>
+          <li>Android (Google Play)</li>
+          <li>SQLite (offline-first)</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-category-label" data-en="Data &amp; Infra" data-pt="Dados &amp; Infra">Data &amp; Infra</div>
+        <ul class="skill-list">
+          <li>SQL Server / MySQL / PostgreSQL</li>
+          <li>Redis / Elasticsearch</li>
+          <li>Docker</li>
+          <li>AWS / Azure</li>
+          <li>Azure DevOps</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-category-label" data-en="Tools &amp; Workflow" data-pt="Ferramentas">Tools &amp; Workflow
         </div>
-      </a>
+        <ul class="skill-list">
+          <li>Git / GitFlow</li>
+          <li>Agile / Scrum / MVVM</li>
+          <li>Design Patterns</li>
+          <li>UML</li>
+          <li>GNU/Linux</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-category-label" data-en="Also Known" data-pt="Tamb&eacute;m Domino">Also Known</div>
+        <ul class="skill-list">
+          <li>Python / Java / C / C++</li>
+          <li>Blockchain / Cryptography</li>
+          <li>XML / JSON / SASS</li>
+          <li>jQuery / Styled-components</li>
+          <li>Computer Networks</li>
+        </ul>
+      </div>
+
     </div>
   </section>
-  <footer class="copyright">
-    <div class="up" id="up">
-      <i class="fas fa-chevron-up"></i>
+
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-header reveal">
+      <span class="section-num">03</span>
+      <h2 class="section-title" data-en="Experience" data-pt="Experi&ecirc;ncia">Experience</h2>
+      <div class="section-line"></div>
     </div>
-    <p>&copy; 2020 Arthur Hülle</p>
+
+    <div class="exp-list">
+
+      <div class="exp-item reveal">
+        <div class="exp-company">
+          <a href="https://dotcode.com.br" target="_blank" rel="noopener">
+            Dotcode Cloud &amp; Software
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+          <div class="exp-period" data-en="Jan 2024 &mdash; Present" data-pt="Jan 2024 &mdash; Presente">Jan 2024
+            &mdash; Present</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role" data-en="Fullstack Developer" data-pt="Desenvolvedor Fullstack">Fullstack Developer
+          </div>
+          <p class="exp-desc"
+            data-en="Building solutions for foreign trade, logistics, and legislative document management. Developing CRUDs, integrating government &amp; REST APIs, applying CQRS and MVC patterns, and managing deployments via Azure DevOps and GitFlow."
+            data-pt="Desenvolvimento de solu&ccedil;&otilde;es para com&eacute;rcio exterior, log&iacute;stica e gest&atilde;o de documentos legislativos. CRUDs, integra&ccedil;&atilde;o de APIs governamentais e REST, padr&otilde;es CQRS e MVC, e deploys via Azure DevOps e GitFlow.">
+            Building solutions for foreign trade, logistics, and legislative document management. Developing CRUDs,
+            integrating government &amp; REST APIs, applying CQRS and MVC patterns, and managing deployments via Azure
+            DevOps and GitFlow.
+          </p>
+        </div>
+        <div class="exp-techs">
+          <span class="tech-pill">C#</span><span class="tech-pill">.NET Core</span>
+          <span class="tech-pill">React</span><span class="tech-pill">TypeScript</span>
+          <span class="tech-pill">SQL</span><span class="tech-pill">Docker</span>
+          <span class="tech-pill">Redis</span><span class="tech-pill">RabbitMQ</span>
+          <span class="tech-pill">Elasticsearch</span><span class="tech-pill">Azure DevOps</span>
+        </div>
+      </div>
+
+      <div class="exp-item reveal" style="transition-delay:0.08s">
+        <div class="exp-company">
+          <a href="https://www.captarconsultoriapublica.com.br/" target="_blank" rel="noopener">
+            Captar Consultoria P&uacute;blica
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+          <div class="exp-period" data-en="Apr 2023 &mdash; Jan 2024" data-pt="Abr 2023 &mdash; Jan 2024">Apr 2023
+            &mdash; Jan 2024</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role" data-en="Fullstack &amp; Mobile Engineer" data-pt="Engenheiro Fullstack &amp; Mobile">
+            Fullstack &amp; Mobile Engineer</div>
+          <p class="exp-desc"
+            data-en="Developed features and modules for SUAS (Unified Social Assistance System) and public health systems. Backend in C# / .NET Core, mobile in Flutter / Dart with offline SQLite support, authentication flows, and REST API integration. Applied MVVM pattern and Agile methodologies."
+            data-pt="Desenvolvimento de funcionalidades para o SUAS e sistemas de sa&uacute;de p&uacute;blica. Backend em C# / .NET Core, mobile em Flutter / Dart com suporte offline SQLite, autentica&ccedil;&atilde;o e integra&ccedil;&atilde;o REST. Padr&atilde;o MVVM e metodologias &aacute;geis.">
+            Developed features and modules for SUAS (Unified Social Assistance System) and public health systems.
+            Backend in C# / .NET Core, mobile in Flutter / Dart with offline SQLite support, authentication flows, and
+            REST API integration. Applied MVVM pattern and Agile methodologies.
+          </p>
+        </div>
+        <div class="exp-techs">
+          <span class="tech-pill">C#</span><span class="tech-pill">.NET Core</span>
+          <span class="tech-pill">Flutter</span><span class="tech-pill">Dart</span>
+          <span class="tech-pill">SQLite</span><span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">HTML5/CSS3</span><span class="tech-pill">Blazor</span>
+        </div>
+      </div>
+
+      <div class="exp-item reveal" style="transition-delay:0.16s">
+        <div class="exp-company">
+          <a href="https://www.captarconsultoriapublica.com.br/" target="_blank" rel="noopener">
+            Captar Consultoria P&uacute;blica
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+          <div class="exp-period" data-en="Nov 2022 &mdash; Apr 2023" data-pt="Nov 2022 &mdash; Abr 2023">Nov 2022
+            &mdash; Apr 2023</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role" data-en="Full Stack Developer" data-pt="Desenvolvedor Full Stack">Full Stack Developer
+          </div>
+          <p class="exp-desc"
+            data-en="Software development using C# &amp; .NET Core on the backend with JavaScript, HTML5, and CSS3 on the frontend. Contributed to public-sector digital transformation projects."
+            data-pt="Desenvolvimento com C# &amp; .NET Core no backend e JavaScript, HTML5 e CSS3 no frontend. Contribui&ccedil;&atilde;o a projetos de transforma&ccedil;&atilde;o digital do setor p&uacute;blico.">
+            Software development using C# &amp; .NET Core on the backend with JavaScript, HTML5, and CSS3 on the
+            frontend. Contributed to public-sector digital transformation projects.
+          </p>
+        </div>
+        <div class="exp-techs">
+          <span class="tech-pill">C#</span><span class="tech-pill">.NET Core</span>
+          <span class="tech-pill">JavaScript</span><span class="tech-pill">HTML5</span>
+          <span class="tech-pill">CSS3</span><span class="tech-pill">GitFlow</span>
+        </div>
+      </div>
+
+      <div class="exp-item reveal" style="transition-delay:0.24s">
+        <div class="exp-company">
+          <a href="https://www.pjmei.app/" target="_blank" rel="noopener">
+            PJMEI
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+          <div class="exp-period" data-en="Mar 2022 &mdash; Nov 2022" data-pt="Mar 2022 &mdash; Nov 2022">Mar 2022
+            &mdash; Nov 2022</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role" data-en="Application Developer" data-pt="Desenvolvedor de Aplicativos">Application
+            Developer</div>
+          <p class="exp-desc"
+            data-en="Frontend mobile and web development for a micro-entrepreneur management platform. Built finance, bank account, financial education, and government declaration modules. Consumed REST &amp; government APIs under a BFF architecture. Published to Google Play and the App Store via Xcode."
+            data-pt="Desenvolvimento mobile e web para plataforma de gest&atilde;o de MEIs. M&oacute;dulos de finan&ccedil;as, contas banc&aacute;rias, educa&ccedil;&atilde;o financeira e declara&ccedil;&otilde;es governamentais. APIs REST e governamentais com arquitetura BFF. Publica&ccedil;&atilde;o nas lojas Google Play e App Store via Xcode.">
+            Frontend mobile and web development for a micro-entrepreneur management platform. Built finance, bank
+            account, financial education, and government declaration modules. Consumed REST &amp; government APIs under
+            a BFF architecture. Published to Google Play and the App Store via Xcode.
+          </p>
+        </div>
+        <div class="exp-techs">
+          <span class="tech-pill">Flutter</span><span class="tech-pill">Dart</span>
+          <span class="tech-pill">REST APIs</span><span class="tech-pill">BFF</span>
+          <span class="tech-pill">iOS / Xcode</span><span class="tech-pill">Google Play</span>
+          <span class="tech-pill">MVVM</span>
+        </div>
+      </div>
+
+      <div class="exp-item reveal" style="transition-delay:0.32s">
+        <div class="exp-company">
+          <a href="https://www.ifes.edu.br/" target="_blank" rel="noopener">
+            IFES &mdash; Instituto Federal do Esp&iacute;rito Santo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+          <div class="exp-period" data-en="2019 &mdash; Dec 2022" data-pt="2019 &mdash; Dez 2022">2019 &mdash; Dec 2022
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role" data-en="Bachelor's in Information Systems"
+            data-pt="Bacharelado em Sistemas de Informa&ccedil;&atilde;o">Bachelor's in Information Systems</div>
+          <p class="exp-desc"
+            data-en="Studied algorithms, data structures, computer networks, databases, and software engineering. Built the academic foundation that underpins every layer of my professional work."
+            data-pt="Estudo de algoritmos, estruturas de dados, redes de computadores, bancos de dados e engenharia de software. Base acad&ecirc;mica que fundamenta todo o meu trabalho profissional.">
+            Studied algorithms, data structures, computer networks, databases, and software engineering. Built the
+            academic foundation that underpins every layer of my professional work.
+          </p>
+        </div>
+        <div class="exp-techs">
+          <span class="tech-pill">Computer Science</span><span class="tech-pill">Networks</span>
+          <span class="tech-pill">Databases</span><span class="tech-pill">Algorithms</span>
+          <span class="tech-pill">Java / Python / C</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PERSONAL PROJECTS -->
+  <section id="projects">
+    <div class="section-header reveal">
+      <span class="section-num">04</span>
+      <h2 class="section-title" data-en="Personal Projects" data-pt="Projetos Pessoais">Personal Projects</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- 01 SUAS Mobile -->
+      <div class="project-card reveal">
+        <div class="project-num">01</div>
+        <div class="project-top">
+          <div class="project-label" data-en="Mobile App &middot; Public Sector &middot; Production"
+            data-pt="App Mobile &middot; Setor P&uacute;blico &middot; Em Produ&ccedil;&atilde;o">Mobile App &middot;
+            Public Sector &middot; Production</div>
+          <div class="project-title">SUAS Mobile</div>
+          <div class="project-badge" data-en="Live since 2023" data-pt="Em uso desde 2023">Live since 2023</div>
+        </div>
+        <p class="project-desc"
+          data-en="Offline-first Flutter application built for Brazil's Unified Social Assistance System (SUAS) &mdash; actively used in production by the company since 2023. Engineered to operate reliably in low-connectivity environments through a local SQLite database, full authentication flows, and robust CRUD operations synced via REST API. Designed with MVVM architecture, the app has delivered measurable real-world impact to public-sector social work teams across the state."
+          data-pt="Aplicativo Flutter offline-first desenvolvido para o Sistema &Uacute;nico de Assist&ecirc;ncia Social (SUAS) &mdash; ativamente utilizado em produ&ccedil;&atilde;o pela empresa desde 2023. Projetado para operar com confiabilidade em ambientes de baixa conectividade, com banco SQLite local, fluxos de autentica&ccedil;&atilde;o completos e CRUDs sincronizados via REST API. Arquitetura MVVM com impacto real e mensur&aacute;vel para equipes de assist&ecirc;ncia social do setor p&uacute;blico.">
+          Offline-first Flutter application built for Brazil's Unified Social Assistance System (SUAS) &mdash; actively
+          used in production by the company since 2023. Engineered to operate reliably in low-connectivity environments
+          through a local SQLite database, full authentication flows, and robust CRUD operations synced via REST API.
+          Designed with MVVM architecture, the app has delivered measurable real-world impact to public-sector social
+          work teams across the state.
+        </p>
+        <div class="project-footer">
+          <div class="project-techs">
+            <span class="tag">Flutter</span><span class="tag">Dart</span>
+            <span class="tag">SQLite</span><span class="tag">REST APIs</span>
+            <span class="tag">MVVM</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/arthurhl" target="_blank" rel="noopener" class="project-link">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 StreamPull -->
+      <div class="project-card reveal" style="transition-delay:0.08s">
+        <div class="project-num">02</div>
+        <div class="project-top">
+          <div class="project-label" data-en="Web &middot; Media Tooling"
+            data-pt="Web &middot; Ferramentas de M&iacute;dia">Web &middot; Media Tooling</div>
+          <div class="project-title">StreamPull</div>
+        </div>
+        <p class="project-desc"
+          data-en="A high-speed media extraction platform built for performance and velocity. Pulls video and audio from major social networks with dynamic resolution detection and optimized processing pipelines &mdash; delivering the fastest possible output with minimal overhead."
+          data-pt="Plataforma de extra&ccedil;&atilde;o de m&iacute;dia de alta velocidade, constru&iacute;da para performance e velocidade. Baixa v&iacute;deos e &aacute;udios das principais redes sociais com detec&ccedil;&atilde;o din&acirc;mica de resolu&ccedil;&atilde;o e pipelines de processamento otimizados &mdash; entregando o resultado mais r&aacute;pido poss&iacute;vel com overhead m&iacute;nimo.">
+          A high-speed media extraction platform built for performance and velocity. Pulls video and audio from major
+          social networks with dynamic resolution detection and optimized processing pipelines &mdash; delivering the
+          fastest possible output with minimal overhead.
+        </p>
+        <div class="project-footer">
+          <div class="project-techs">
+            <span class="tag">Python</span><span class="tag">HTML</span><span class="tag">CSS</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/arthurhl" target="_blank" rel="noopener" class="project-link">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 SatoshiScope -->
+      <div class="project-card reveal" style="transition-delay:0.16s">
+        <div class="project-num">03</div>
+        <div class="project-top">
+          <div class="project-label" data-en="Mobile App &middot; Finance"
+            data-pt="App Mobile &middot; Finan&ccedil;as">Mobile App &middot; Finance</div>
+          <div class="project-title">SatoshiScope</div>
+        </div>
+        <p class="project-desc"
+          data-en="A Bitcoin forecasting and conversion calculator that fetches live market prices and lets users simulate future price scenarios. Given a target BTC price, it projects the equivalent value in local currency &mdash; giving investors a clear, data-driven picture of potential returns."
+          data-pt="Calculadora de previs&atilde;o e convers&atilde;o de Bitcoin que busca pre&ccedil;os de mercado em tempo real e permite simular cen&aacute;rios futuros. Dado um pre&ccedil;o-alvo de BTC, projeta o valor equivalente em moeda local &mdash; oferecendo ao investidor uma vis&atilde;o clara e orientada por dados do retorno potencial.">
+          A Bitcoin forecasting and conversion calculator that fetches live market prices and lets users simulate future
+          price scenarios. Given a target BTC price, it projects the equivalent value in local currency &mdash; giving
+          investors a clear, data-driven picture of potential returns.
+        </p>
+        <div class="project-footer">
+          <div class="project-techs">
+            <span class="tag">Flutter</span><span class="tag">Dart</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/arthurhl" target="_blank" rel="noopener" class="project-link">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 LeverEdge -->
+      <div class="project-card reveal" style="transition-delay:0.24s">
+        <div class="project-num">04</div>
+        <div class="project-top">
+          <div class="project-label" data-en="Automation &middot; Trading"
+            data-pt="Automa&ccedil;&atilde;o &middot; Trading">Automation &middot; Trading</div>
+          <div class="project-title">LeverEdge</div>
+        </div>
+        <p class="project-desc"
+          data-en="An automated trading bot that tracks Bitcoin price movements on a leveraged trading platform and executes buy and sell operations based on preconfigured strategies and risk parameters. Designed for precision and control &mdash; minimizing emotional decision-making in volatile markets."
+          data-pt="Bot de trading automatizado que monitora movimentos do pre&ccedil;o do Bitcoin em uma plataforma de opera&ccedil;&otilde;es alavancadas e executa ordens de compra e venda com base em estrat&eacute;gias pr&eacute;-configuradas e par&acirc;metros de risco. Projetado para precis&atilde;o e controle &mdash; eliminando decis&otilde;es emocionais em mercados vol&aacute;teis.">
+          An automated trading bot that tracks Bitcoin price movements on a leveraged trading platform and executes buy
+          and sell operations based on preconfigured strategies and risk parameters. Designed for precision and control
+          &mdash; minimizing emotional decision-making in volatile markets.
+        </p>
+        <div class="project-footer">
+          <div class="project-techs">
+            <span class="tag">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/arthurhl" target="_blank" rel="noopener" class="project-link">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header reveal">
+      <span class="section-num">05</span>
+      <h2 class="section-title" data-en="Contact" data-pt="Contato">Contact</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="contact-inner">
+
+      <div class="contact-left reveal">
+        <h2>
+          <span data-en="Let's build something" data-pt="Vamos construir algo">Let's build something</span><br>
+          <span class="accent-text" data-en="great together." data-pt="incr&iacute;vel juntos.">great together.</span>
+        </h2>
+        <p data-en="Whether you have a project in mind, a role to fill, or just want to connect &mdash; my inbox is always open. I typically respond within 24 hours."
+          data-pt="Seja um projeto em mente, uma vaga para preencher ou apenas uma conex&atilde;o &mdash; minha caixa de entrada est&aacute; sempre aberta. Geralmente respondo em at&eacute; 24 horas.">
+          Whether you have a project in mind, a role to fill, or just want to connect &mdash; my inbox is always open. I
+          typically respond within 24 hours.
+        </p>
+      </div>
+
+      <div class="contact-links reveal" style="transition-delay:0.15s">
+
+        <a href="mailto:arthurleitee@gmail.com" class="contact-link-item">
+          <div class="contact-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </div>
+          <div class="contact-link-text">
+            <div class="contact-link-label">Email</div>
+            <div class="contact-link-value">arthurleitee@gmail.com</div>
+          </div>
+          <div class="contact-arrow">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/arthurhl/" target="_blank" rel="noopener" class="contact-link-item">
+          <div class="contact-icon">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.036c.356-.675 1.227-1.387 2.524-1.387 2.704 0 3.203 1.778 3.203 4.092v4.71z" />
+            </svg>
+          </div>
+          <div class="contact-link-text">
+            <div class="contact-link-label">LinkedIn</div>
+            <div class="contact-link-value">linkedin.com/in/arthurhl</div>
+          </div>
+          <div class="contact-arrow">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="https://github.com/arthurhl" target="_blank" rel="noopener" class="contact-link-item">
+          <div class="contact-icon">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+            </svg>
+          </div>
+          <div class="contact-link-text">
+            <div class="contact-link-label">GitHub</div>
+            <div class="contact-link-value">github.com/arthurhl</div>
+          </div>
+          <div class="contact-arrow">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p data-en="&copy; 2025 Arthur H&uuml;lle &mdash; Crafted with care."
+      data-pt="&copy; 2025 Arthur H&uuml;lle &mdash; Feito com cuidado.">&copy; 2025 Arthur H&uuml;lle &mdash; Crafted
+      with care.</p>
+    <a href="#" class="back-top">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 19l7-7-7-7" />
+      </svg>
+      <span data-en="Back to top" data-pt="Voltar ao topo">Back to top</span>
+    </a>
   </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="scripts.js"></script>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+    var currentLang = 'en';
+
+    var RESUME_FILES = {
+      en: { href: './assets/ResumeArthurHulleLeite.pdf', download: 'ResumeArthurHulleLeite.pdf' },
+      pt: { href: './assets/CurriculoArthurHulleLeite.pdf', download: 'CurriculoArthurHulleLeite.pdf' }
+    };
+
+    var PAGE_TITLES = {
+      en: 'Arthur H\u00fclle \u2014 Fullstack Engineer',
+      pt: 'Arthur H\u00fclle \u2014 Engenheiro Fullstack'
+    };
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+
+      document.querySelectorAll('[data-en][data-pt]').forEach(function (el) {
+        el.innerHTML = lang === 'pt' ? el.dataset.pt : el.dataset.en;
+      });
+
+      var btn = document.getElementById('resumeBtn');
+      if (btn) {
+        btn.href = RESUME_FILES[lang].href;
+        btn.download = RESUME_FILES[lang].download;
+      }
+
+      document.title = PAGE_TITLES[lang];
+      document.getElementById('langEN').classList.toggle('active', lang === 'en');
+      document.getElementById('langPT').classList.toggle('active', lang === 'pt');
+
+      try { localStorage.setItem('portfolio-lang', lang); } catch (e) { }
+    }
+
+    document.getElementById('langToggle').addEventListener('click', function () {
+      applyLanguage(currentLang === 'en' ? 'pt' : 'en');
+    });
+
+    (function initLang() {
+      var saved;
+      try { saved = localStorage.getItem('portfolio-lang'); } catch (e) { }
+      var browserPT = (navigator.language || '').toLowerCase().indexOf('pt') === 0;
+      applyLanguage(saved ? saved : (browserPT ? 'pt' : 'en'));
+    })();
+
+    var navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', function () {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      revealObserver.observe(el);
+    });
+
+    function openMobileNav() { document.getElementById('mobileNav').classList.add('open'); }
+    function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); }
+    document.getElementById('mobileClose').addEventListener('click', closeMobileNav);
+  </script>
+
 </body>
 
 </html>
