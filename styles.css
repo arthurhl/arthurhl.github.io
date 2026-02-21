@@ -397,6 +397,7 @@ nav.scrolled {
   gap: 0.5rem;
   opacity: 0;
   animation: fade-in 1s 1.2s forwards;
+  white-space: nowrap;
 }
 
 .scroll-hint span {
@@ -419,7 +420,7 @@ nav.scrolled {
    ============================================================ */
 
 section {
-  padding: 8rem 3rem;
+  padding: 6rem 3rem;
 }
 
 .section-header {
@@ -474,7 +475,7 @@ section {
 
 .about-photo {
   width: 100%;
-  aspect-ratio: 9 / 4;
+  aspect-ratio: 5 / 4;
   background: var(--bg3);
   border: 1px solid var(--border);
   overflow: hidden;
@@ -740,8 +741,8 @@ section {
   color: var(--text);
   text-decoration: none;
   transition: color 0.25s;
-  display: flex;
-  align-items: center;
+  display: inline-flex;
+  align-items: flex-start;
   gap: 0.4rem;
 }
 
@@ -754,6 +755,7 @@ section {
   opacity: 0.5;
   transition: opacity 0.2s;
   flex-shrink: 0;
+  margin-top: 0.2rem;
 }
 
 .exp-company a:hover svg {
@@ -819,7 +821,6 @@ section {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 1fr;
   gap: 1.5px;
   background: var(--border);
   border: 1px solid var(--border);
@@ -1247,6 +1248,36 @@ footer p {
 }
 
 
+
+
+/* ============================================================
+   Responsive — Tablet/Nav squeeze (≤ 960px)
+   ============================================================ */
+
+@media (max-width: 960px) {
+  .nav-links {
+    gap: 1.4rem;
+  }
+
+  .nav-right {
+    gap: 0.8rem;
+  }
+
+  nav {
+    padding: 1.5rem 2rem;
+  }
+
+  .nav-resume {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+
+  .scroll-hint {
+    display: none;
+  }
+}
+
 /* ============================================================
    Responsive — Mobile (≤ 768px)
    ============================================================ */
@@ -1274,6 +1305,10 @@ footer p {
 
   .hamburger {
     display: flex;
+  }
+
+  .scroll-hint {
+    display: none;
   }
 
   .skills-grid {
