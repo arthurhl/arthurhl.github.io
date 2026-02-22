@@ -16,7 +16,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Arthur Hülle — Fullstack Engineer" />
   <meta property="og:description" content="Fullstack &amp; Mobile Engineer. C#, .NET, React, Flutter." />
-  <meta property="og:image" content="./assets/profile.jpeg" />
+  <meta property="og:image" content="./assets/profile.png" />
 
   <!-- Favicon: inline SVG data-URI — resolves correctly on any deploy path -->
   <link rel="icon" type="image/svg+xml"
@@ -46,6 +46,31 @@
     <a href="#projects" onclick="closeMobileNav()" data-en="Personal Projects" data-pt="Projetos Pessoais">Personal
       Projects</a>
     <a href="#contact" onclick="closeMobileNav()" data-en="Contact" data-pt="Contato">Contact</a>
+
+    <!-- Mobile controls: language + theme -->
+    <div class="mobile-nav-controls">
+      <button class="lang-toggle" id="langToggleMobile" aria-label="Toggle language">
+        <span class="lang-opt" id="langENMobile">EN</span>
+        <span class="lang-sep">/</span>
+        <span class="lang-opt" id="langPTMobile">PT</span>
+      </button>
+      <button class="theme-toggle" id="themeToggleMobile" aria-label="Toggle theme">
+        <svg id="iconSunMobile" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+        <svg id="iconMoonMobile" viewBox="0 0 24 24" aria-hidden="true" style="display:none">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+      </button>
+    </div>
   </div>
 
   <!-- Navigation -->
@@ -63,6 +88,24 @@
         <span class="lang-opt" id="langEN">EN</span>
         <span class="lang-sep">/</span>
         <span class="lang-opt" id="langPT">PT</span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <!-- Sun icon (shown in dark mode) -->
+        <svg id="iconSun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+        <!-- Moon icon (shown in light mode) -->
+        <svg id="iconMoon" viewBox="0 0 24 24" aria-hidden="true" style="display:none">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
       </button>
       <a href="./assets/ResumeArthurHulle.pdf" download="ResumeArthurHulle.pdf" id="resumeBtn" class="nav-resume"
         data-en="Resume &#x2193;" data-pt="Curr&iacute;culo &#x2193;">Resume &#x2193;</a>
@@ -123,7 +166,7 @@
 
       <div class="about-photo-wrap reveal">
         <div class="about-photo">
-          <img src="./assets/profile.jpeg" alt="Arthur Hülle" />
+          <img src="./assets/profile.png" alt="Arthur Hülle" />
         </div>
         <div class="about-photo-accent"></div>
       </div>
@@ -346,7 +389,7 @@
           <div class="exp-period" data-en="Nov 2022 — Apr 2023" data-pt="Nov 2022 — Abr 2023">Nov 2022 — Apr 2023</div>
         </div>
         <div class="exp-content">
-          <div class="exp-role" data-en="Full Stack Developer" data-pt="Desenvolvedor Full Stack">Full Stack Developer
+          <div class="exp-role" data-en="Fullstack Developer" data-pt="Desenvolvedor Fullstack">Fullstack Developer
           </div>
           <p class="exp-desc"
             data-en="Software development using C# &amp; .NET Core on the backend with JavaScript, HTML5, and CSS3 on the frontend. Contributed to public-sector digital transformation projects."
@@ -690,8 +733,15 @@
       }
 
       document.title = PAGE_TITLES[lang];
-      document.getElementById('langEN').classList.toggle('active', lang === 'en');
-      document.getElementById('langPT').classList.toggle('active', lang === 'pt');
+
+      // Sync desktop + mobile lang indicators
+      var isEN = lang === 'en';
+      document.getElementById('langEN').classList.toggle('active', isEN);
+      document.getElementById('langPT').classList.toggle('active', !isEN);
+      var mEN = document.getElementById('langENMobile');
+      var mPT = document.getElementById('langPTMobile');
+      if (mEN) mEN.classList.toggle('active', isEN);
+      if (mPT) mPT.classList.toggle('active', !isEN);
 
       try { localStorage.setItem('portfolio-lang', lang); } catch (e) { }
     }
@@ -699,6 +749,13 @@
     document.getElementById('langToggle').addEventListener('click', function () {
       applyLanguage(currentLang === 'en' ? 'pt' : 'en');
     });
+
+    var mLangToggle = document.getElementById('langToggleMobile');
+    if (mLangToggle) {
+      mLangToggle.addEventListener('click', function () {
+        applyLanguage(currentLang === 'en' ? 'pt' : 'en');
+      });
+    }
 
     (function initLang() {
       var saved;
@@ -725,6 +782,45 @@
     function openMobileNav() { document.getElementById('mobileNav').classList.add('open'); }
     function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); }
     document.getElementById('mobileClose').addEventListener('click', closeMobileNav);
+
+
+    /* ── Theme Toggle ── */
+    var currentTheme = 'dark';
+
+    function applyTheme(theme) {
+      currentTheme = theme;
+      document.documentElement.setAttribute('data-theme', theme === 'light' ? 'light' : '');
+
+      var isLight = theme === 'light';
+      // Sync all sun/moon icons (desktop + mobile)
+      ['iconSun', 'iconSunMobile'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.style.display = isLight ? 'none' : 'block';
+      });
+      ['iconMoon', 'iconMoonMobile'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.style.display = isLight ? 'block' : 'none';
+      });
+
+      try { localStorage.setItem('portfolio-theme', theme); } catch (e) { }
+    }
+
+    document.getElementById('themeToggle').addEventListener('click', function () {
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+
+    var mThemeToggle = document.getElementById('themeToggleMobile');
+    if (mThemeToggle) {
+      mThemeToggle.addEventListener('click', function () {
+        applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+      });
+    }
+
+    (function initTheme() {
+      var saved;
+      try { saved = localStorage.getItem('portfolio-theme'); } catch (e) { }
+      applyTheme(saved === 'light' ? 'light' : 'dark');
+    })();
   </script>
 
 </body>
