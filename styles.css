@@ -74,6 +74,23 @@
   --theme-icon-moon: block;
 }
 
+/* ── Light mode: subtle cross-hatch texture ──
+   Faint diagonal lines give light mode the same tactile depth as
+   dark mode's grid — clean, professional, no visual noise. */
+[data-theme="light"] body {
+  background-image:
+    repeating-linear-gradient(45deg,
+      transparent,
+      transparent 24px,
+      rgba(0, 0, 0, 0.03) 24px,
+      rgba(0, 0, 0, 0.03) 25px),
+    repeating-linear-gradient(-45deg,
+      transparent,
+      transparent 24px,
+      rgba(0, 0, 0, 0.03) 24px,
+      rgba(0, 0, 0, 0.03) 25px);
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -1334,8 +1351,6 @@ footer p {
 
 @media (max-width: 1024px) and (orientation: portrait) {
   #hero {
-    /* Back to flex-end so label+title+cta stay grouped at bottom together,
-       eliminating the isolated name effect. padding-top clears the navbar. */
     min-height: 100svh;
     padding: 8rem 2.5rem 5rem;
     justify-content: flex-end;
