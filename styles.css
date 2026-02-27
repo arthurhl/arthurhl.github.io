@@ -1225,6 +1225,18 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  position: relative;
+}
+
+[data-theme="light"] footer {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
 
 footer p {
@@ -1346,14 +1358,48 @@ footer p {
    ============================================================ */
 
 /* ============================================================
+   Responsive — Large Tablet Portrait (Tab S10 FE+, 1025–1800px wide, portrait)
+   Targets high-res portrait tablets whose width exceeds the 1024px breakpoint.
+   ============================================================ */
+
+@media (min-width: 1025px) and (max-width: 1800px) and (orientation: portrait) {
+  #hero {
+    min-height: 60svh;
+    padding: 6rem 3rem 5rem;
+    justify-content: center;
+  }
+
+  .hero-title {
+    font-size: clamp(4rem, 8vw, 9rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-label {
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .hero-desc {
+    max-width: 540px;
+  }
+}
+
+/* ============================================================
    Responsive — Tablet Portrait (portrait orientation, ≤ 1024px wide)
    ============================================================ */
 
 @media (max-width: 1024px) and (orientation: portrait) {
   #hero {
-    min-height: 100svh;
-    padding: 8rem 2.5rem 5rem;
-    justify-content: flex-end;
+    /* Reduce from 100svh — tall portrait viewports leave a massive void at full height.
+       Center content with symmetric padding so hero feels balanced, not bottom-heavy. */
+    min-height: 70svh;
+    padding: 7rem 2.5rem 5rem;
+    justify-content: center;
   }
 
   .hero-title {
@@ -1380,10 +1426,6 @@ footer p {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 4rem;
-  }
-
-  .about-photo-wrap {
-    max-width: 360px;
   }
 
   .skills-grid {
