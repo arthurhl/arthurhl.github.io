@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=18" />
+    <link rel="stylesheet" href="styles.css?v=60" />
 </head>
 
 <body>
@@ -29,6 +29,7 @@
       <a href="#work" data-en="Work" data-pt="Trabalho">Work</a>
       <a href="#proof" data-en="Notes" data-pt="Casos">Notes</a>
       <a href="#toolbox" data-en="Toolbox" data-pt="Ferramentas">Toolbox</a>
+      <a href="#library" data-en="Library" data-pt="Biblioteca">Library</a>
       <a href="#contact" data-en="Contact" data-pt="Contato">Contact</a>
     </div>
     <div class="nav-actions">
@@ -37,7 +38,6 @@
       <button class="theme-toggle" id="themeToggle" aria-label="Switch to night mode">
         <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9.2 9.2 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path></svg>
         <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
-        <span class="theme-label" data-en="night" data-pt="noturno">night</span>
       </button>
       <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span></button>
     </div>
@@ -49,6 +49,7 @@
     <a href="#work" data-en="Work" data-pt="Trabalho">Work</a>
     <a href="#proof" data-en="Notes" data-pt="Casos">Notes</a>
     <a href="#toolbox" data-en="Toolbox" data-pt="Ferramentas">Toolbox</a>
+    <a href="#library" data-en="Library" data-pt="Biblioteca">Library</a>
     <a href="#contact" data-en="Contact" data-pt="Contato">Contact</a>
   </div>
 
@@ -60,12 +61,22 @@
         <p class="hero-intro" data-en="I’m Arthur — I work between product intent and technical reality, shaping interfaces, services, and the details that make software feel trustworthy." data-pt="Sou Arthur — trabalho entre a intenção do produto e a realidade técnica, dando forma a interfaces, serviços e detalhes que tornam o software confiável.">I’m Arthur — I work between product intent and technical reality, shaping interfaces, services, and the details that make software feel trustworthy.</p>
         <div class="hero-actions">
           <a class="button button-dark" href="#work"><span data-en="See the work" data-pt="Ver o trabalho">See the work</span><span class="button-arrow">↘</span></a>
-          <a class="text-link" href="mailto:arthurleitee@gmail.com"><span data-en="Start a conversation" data-pt="Começar uma conversa">Start a conversation</span><span>↗</span></a>
+          <a class="text-link" href="https://wa.me/5528999550949" target="_blank" rel="noopener"><span data-en="Start a conversation" data-pt="Começar uma conversa">Start a conversation</span><span>↗</span></a>
         </div>
       </div>
       <div class="hero-portrait-wrap" aria-label="Portrait of Arthur Hülle">
-        <div class="portrait-orbit orbit-one"></div>
-        <div class="portrait-orbit orbit-two"></div>
+        <svg class="portrait-linework" viewBox="0 0 100 100" aria-hidden="true">
+          <ellipse class="portrait-orbit-ellipse portrait-orbit-primary" cx="51" cy="53" rx="56" ry="34" transform="rotate(-26 51 53)"></ellipse>
+          <ellipse class="portrait-orbit-ellipse portrait-orbit-secondary" cx="56" cy="50" rx="39" ry="62" transform="rotate(-26 56 50)"></ellipse>
+          <path class="portrait-connector" d="M 76 14 L 72 17"></path>
+          <path class="portrait-connector" d="M 20 90 L 22 64"></path>
+          <path class="portrait-connector" d="M 7 23 L 24 14"></path>
+          <path class="portrait-connector" d="M 93 84 L 79 70"></path>
+        </svg>
+        <div class="portrait-badge portrait-badge-location"><span data-en="01 / location" data-pt="01 / localização">01 / location</span><b data-en="based in Brazil" data-pt="no Brasil">based in Brazil</b></div>
+        <div class="portrait-badge portrait-badge-omarchy"><span data-en="02 / workstation" data-pt="02 / estação de trabalho">02 / workstation</span><b data-en="Omarchy user" data-pt="usuário do Omarchy">Omarchy user</b></div>
+        <div class="portrait-badge portrait-badge-details"><span data-en="03 / reading" data-pt="03 / leitura">03 / reading</span><b data-en="avid reader" data-pt="leitor assíduo">avid reader</b></div>
+        <div class="portrait-badge portrait-badge-farm"><span data-en="04 / roots" data-pt="04 / raízes">04 / roots</span><b data-en="dev + farmer" data-pt="dev + fazendeiro">dev + farmer</b></div>
         <div class="portrait-blob"></div>
         <img src="./assets/profile.png" alt="Arthur Hülle" class="portrait" />
       </div>
@@ -112,9 +123,12 @@
         <div class="section-kicker"><span>04</span><span data-en="Proof, not buzzwords" data-pt="Prova, não buzzword">Proof, not buzzwords</span></div>
         <div class="proof-heading"><h2 data-en="What I like to<br><em>untangle.</em>" data-pt="O que gosto de<br><em>simplificar.</em>">What I like to<br><em>untangle.</em></h2><p data-en="A few real constraints I’ve had to respect — and the engineering choices that made them manageable." data-pt="Algumas restrições reais que precisei respeitar — e as escolhas de engenharia que as tornaram administráveis.">A few real constraints I’ve had to respect — and the engineering choices that made them manageable.</p></div>
         <div class="proof-grid">
-          <article class="proof-card proof-coral"><div class="proof-label" data-en="01 / performance" data-pt="01 / performance">01 / performance</div><strong>O(n²)<br>→ O(n)</strong><h3 data-en="Remove the bottleneck before it becomes an incident." data-pt="Remover o gargalo antes que ele vire um incidente.">Remove the bottleneck before it becomes an incident.</h3><p data-en="A document-related path had nested processing that would grow badly with each related record. I reduced its algorithmic complexity proactively, before volume turned it into a production problem." data-pt="Um fluxo relacionado a documentos tinha um processamento aninhado que cresceria mal a cada registro relacionado. Reduzi sua complexidade algorítmica de forma preventiva, antes que o volume o transformasse em um problema de produção.">A document-related path had nested processing that would grow badly with each related record. I reduced its algorithmic complexity proactively, before volume turned it into a production problem.</p></article>
-          <article class="proof-card proof-blue"><div class="proof-label" data-en="02 / document systems" data-pt="02 / sistemas documentais">02 / document systems</div><strong>100%<br><span data-en="no longer the norm" data-pt="deixou de ser rotina">no longer the norm</span></strong><h3 data-en="Rebuild the path, not just the symptom." data-pt="Reconstruir o caminho, não só o sintoma.">Rebuild the path, not just the symptom.</h3><p data-en="A company-wide monthly invoice used to push database utilization to 100%. Reworking the data, query, event, and caching path stopped the recurring saturation without changing the billing outcome." data-pt="Uma fatura mensal usada por toda a empresa levava o banco a 100% de utilização. Reestruturar o caminho de dados, consultas, eventos e cache eliminou a saturação recorrente sem mudar o resultado do faturamento.">A company-wide monthly invoice used to push database utilization to 100%. Reworking the data, query, event, and caching path stopped the recurring saturation without changing the billing outcome.</p></article>
-          <article class="proof-card proof-ink"><div class="proof-label" data-en="03 / field reality" data-pt="03 / realidade de campo">03 / field reality</div><strong>Offline<br><span data-en="by design" data-pt="por projeto">by design</span></strong><h3 data-en="Connectivity is a constraint, not a footnote." data-pt="Conectividade é uma restrição, não uma nota de rodapé.">Connectivity is a constraint, not a footnote.</h3><p data-en="For public-sector teams working in the field, the mobile flow kept local SQLite data useful offline and synchronized through REST when a connection returned." data-pt="Para equipes do setor público trabalhando em campo, o fluxo mobile manteve os dados locais úteis offline e sincronizou via REST quando a conexão voltou.">For public-sector teams working in the field, the mobile flow kept local SQLite data useful offline and synchronized through REST when a connection returned.</p></article>
+          <article class="proof-card proof-coral"><div class="proof-label" data-en="01 / legacy performance" data-pt="01 / performance legada">01 / legacy performance</div><strong>O(n²)<br>→ O(n)</strong><h3 data-en="Refactor the hot path before Azure becomes the bottleneck." data-pt="Refatorar o caminho crítico antes que o Azure vire o gargalo.">Refactor the hot path before Azure becomes the bottleneck.</h3><p data-en="A heavily used company functionality was buried in legacy processing that degraded Azure performance. I cleaned the flow and reduced its algorithmic complexity from O(n²) to O(n), before the problem became an incident." data-pt="Uma funcionalidade muito usada pela empresa estava presa a um processamento legado que degradava a performance no Azure. Limpei o fluxo e reduzi sua complexidade algorítmica de O(n²) para O(n), antes que o problema virasse um incidente.">A heavily used company functionality was buried in legacy processing that degraded Azure performance. I cleaned the flow and reduced its algorithmic complexity from O(n²) to O(n), before the problem became an incident.</p></article>
+          <article class="proof-card proof-blue"><div class="proof-label" data-en="02 / database saturation" data-pt="02 / saturação do banco">02 / database saturation</div><strong>100%<br><span data-en="no longer the norm" data-pt="deixou de ser rotina">no longer the norm</span></strong><h3 data-en="Rebuild the path, not just the symptom." data-pt="Reconstruir o caminho, não só o sintoma.">Rebuild the path, not just the symptom.</h3><p data-en="A company-wide monthly invoice used to push database utilization to 100%. Reworking the data, query, event, and caching path stopped the recurring saturation without changing the billing outcome." data-pt="Uma fatura mensal usada por toda a empresa levava o banco a 100% de utilização. Reestruturar o caminho de dados, consultas, eventos e cache eliminou a saturação recorrente sem mudar o resultado do faturamento.">A company-wide monthly invoice used to push database utilization to 100%. Reworking the data, query, event, and caching path stopped the recurring saturation without changing the billing outcome.</p></article>
+          <article class="proof-card proof-black"><div class="proof-label" data-en="03 / production in the field" data-pt="03 / produção em campo">03 / production in the field</div><strong>Offline<br><span data-en="by design" data-pt="por projeto">by design</span></strong><h3 data-en="A field app that is still doing its job." data-pt="Um app de campo que continua cumprindo seu papel.">A field app that is still doing its job.</h3><p data-en="SUAS Mobile remains in production today, supporting social-assistance teams in cities including Serra and Cachoeiro de Itapemirim. Its offline-first SQLite flow syncs through REST when connectivity returns." data-pt="O SUAS Mobile continua em produção hoje, apoiando equipes de assistência social em cidades como Serra e Cachoeiro de Itapemirim. Seu fluxo offline-first com SQLite sincroniza via REST quando a conectividade retorna.">SUAS Mobile remains in production today, supporting social-assistance teams in cities including Serra and Cachoeiro de Itapemirim. Its offline-first SQLite flow syncs through REST when connectivity returns.</p></article>
+          <article class="proof-card proof-yellow"><div class="proof-label" data-en="04 / government APIs" data-pt="04 / APIs governamentais">04 / government APIs</div><strong>APIs<br><span data-en="with consequences" data-pt="com consequências">with consequences</span></strong><h3 data-en="Make bureaucracy legible to software." data-pt="Tornar a burocracia legível para o software.">Make bureaucracy legible to software.</h3><p data-en="At PJMEI, I integrated Brazilian government systems and APIs across finance, banking, education, and declaration flows — turning external rules into dependable product behavior." data-pt="Na PJMEI, integrei sistemas e APIs do governo brasileiro em fluxos de finanças, bancos, educação e declarações — transformando regras externas em comportamento confiável de produto.">At PJMEI, I integrated Brazilian government systems and APIs across finance, banking, education, and declaration flows — turning external rules into dependable product behavior.</p></article>
+          <article class="proof-card proof-cyan"><div class="proof-label" data-en="05 / document fidelity" data-pt="05 / fidelidade documental">05 / document fidelity</div><strong>1:1<br><span data-en="by necessity" data-pt="por necessidade">by necessity</span></strong><h3 data-en="When the document is the interface." data-pt="Quando o documento é a interface.">When the document is the interface.</h3><p data-en="The architecture did not fully cover an unusually precise Airway Bill of Lading. I built an alternate document-generation path to reproduce its awkward details exactly — a document used heavily at Porto de Santos, Latin America's largest port." data-pt="A arquitetura não cobria por completo um Airway Bill of Lading excepcionalmente preciso. Criei um caminho alternativo de geração para reproduzir exatamente seus detalhes estranhos — um documento muito usado no Porto de Santos, o maior porto da América Latina.">The architecture did not fully cover an unusually precise Airway Bill of Lading. I built an alternate document-generation path to reproduce its awkward details exactly — a document used heavily at Porto de Santos, Latin America's largest port.</p></article>
+          <article class="proof-card proof-violet"><div class="proof-label" data-en="06 / applied AI" data-pt="06 / IA aplicada">06 / applied AI</div><strong>RAG<br><span data-en="multi-agent" data-pt="multiagente">multi-agent</span></strong><h3 data-en="Give the system more context, not more noise." data-pt="Dar mais contexto ao sistema, não mais ruído.">Give the system more context, not more noise.</h3><p data-en="I designed a RAG architecture with multiple agents to build and document an entire system, expanding the context available to the work and increasing delivery velocity." data-pt="Desenvolvi uma arquitetura RAG com múltiplos agentes para construir e documentar um sistema inteiro, ampliando o contexto disponível e aumentando a velocidade das entregas.">I designed a RAG architecture with multiple agents to build and document an entire system, expanding the context available to the work and increasing delivery velocity.</p></article>
         </div>
       </div>
     </section>
@@ -123,7 +137,7 @@
       <div class="section-kicker"><span>05</span><span data-en="Things I made" data-pt="Coisas que fiz">Things I made</span></div>
       <div class="projects-heading"><h2 data-en="Small ideas,<br><em>properly made.</em>" data-pt="Ideias pequenas,<br><em>bem feitas.</em>">Small ideas,<br><em>properly made.</em></h2><p data-en="Personal projects are where I test ideas, sharpen tools, and follow the thread until it becomes useful." data-pt="Projetos pessoais são onde testo ideias, afio ferramentas e sigo o fio até ele se tornar útil.">Personal projects are where I test ideas, sharpen tools, and follow the thread until it becomes useful.</p></div>
       <div class="project-collage">
-        <article class="project-tile tile-coral"><div class="tile-meta"><span data-en="01 / production" data-pt="01 / produção">01 / production</span><span data-en="mobile" data-pt="mobile">mobile</span></div><div class="tile-art app-art"><div class="app-screen"><span class="screen-dot"></span><i></i><b>SUAS</b><small data-en="offline / ready" data-pt="offline / pronto">offline / ready</small></div><div class="app-line"></div></div><h3>SUAS Mobile</h3><p data-en="An offline-first Flutter app for Brazil’s Unified Social Assistance System. Built for the moments when connectivity is a luxury." data-pt="Um app Flutter offline-first para o Sistema Único de Assistência Social. Feito para quando conectividade é luxo.">An offline-first Flutter app for Brazil’s Unified Social Assistance System. Built for the moments when connectivity is a luxury.</p><div class="tile-footer"><span>Flutter · SQLite · MVVM</span><a href="https://github.com/arthurhl" target="_blank" rel="noopener">GitHub ↗</a></div></article>
+        <article class="project-tile tile-coral"><div class="tile-meta"><span data-en="01 / production" data-pt="01 / produção">01 / production</span><span data-en="mobile" data-pt="mobile">mobile</span></div><div class="tile-art app-art"><div class="app-screen"><span class="screen-dot"></span><i></i><b>SUAS</b><small data-en="offline / ready" data-pt="offline / pronto">offline / ready</small></div><div class="app-line"></div></div><h3>SUAS Mobile</h3><p data-en="An offline-first Flutter app for Brazil’s Unified Social Assistance System. Built for the moments when connectivity is a luxury." data-pt="Um app Flutter offline-first para o Sistema Único de Assistência Social. Feito para quando conectividade é luxo.">An offline-first Flutter app for Brazil’s Unified Social Assistance System. Built for the moments when connectivity is a luxury.</p><div class="tile-footer"><span>Flutter · SQLite · MVVM</span><span data-en="Private · solo-built" data-pt="Privado · desenvolvido sozinho">Private · solo-built</span></div></article>
         <article class="project-tile tile-blue"><div class="tile-meta"><span data-en="02 / browser" data-pt="02 / navegador">02 / browser</span><span data-en="finance" data-pt="finanças">finance</span></div><div class="tile-art price-art"><span class="price price-one">R$ 240</span><span class="price price-two">8h 12m</span><span class="price price-three">19,840 sats</span><div class="cursor-dot">↗</div></div><h3>Timed Prices</h3><p data-en="A browser extension that reframes prices as sats, bitcoin, or hours of work — a small nudge toward more intentional spending." data-pt="Uma extensão que transforma preços em sats, bitcoin ou horas de trabalho — um pequeno empurrão para gastar com mais intenção.">A browser extension that reframes prices as sats, bitcoin, or hours of work — a small nudge toward more intentional spending.</p><div class="tile-footer"><span data-en="JavaScript · browser extension" data-pt="JavaScript · extensão de navegador">JavaScript · browser extension</span><a href="https://github.com/arthurhl" target="_blank" rel="noopener">GitHub ↗</a></div></article>
         <article class="project-tile tile-lime"><div class="tile-meta"><span data-en="03 / media" data-pt="03 / mídia">03 / media</span><span data-en="tooling" data-pt="ferramentas">tooling</span></div><div class="tile-art stream-art"><span>STREAM</span><b>PULL</b><div class="stream-play">▶</div></div><h3>StreamPull</h3><p data-en="A fast media extraction tool focused on a clean path from source to saved file, without the usual friction." data-pt="Uma ferramenta rápida de extração de mídia focada no caminho mais limpo entre a fonte e o arquivo salvo.">A fast media extraction tool focused on a clean path from source to saved file, without the usual friction.</p><div class="tile-footer"><span>Python · HTML · CSS</span><a href="https://github.com/arthurhl" target="_blank" rel="noopener">GitHub ↗</a></div></article>
         <article class="project-tile tile-ink"><div class="tile-meta"><span data-en="04 / mobile finance" data-pt="04 / finanças mobile">04 / mobile finance</span><span data-en="bitcoin" data-pt="bitcoin">bitcoin</span></div><div class="tile-art chart-art"><svg viewBox="0 0 320 120" role="img" aria-label="Abstract price chart"><path d="M0 95 C25 81 26 100 48 80 S85 62 103 76 S132 27 155 50 S189 34 210 47 S243 15 265 29 S286 21 320 4"/><path class="chart-fill" d="M0 95 C25 81 26 100 48 80 S85 62 103 76 S132 27 155 50 S189 34 210 47 S243 15 265 29 S286 21 320 4 V120 H0Z"/></svg><span class="chart-label" data-en="BTC / NOW" data-pt="BTC / AGORA">BTC / NOW</span></div><h3>SatoshiScope</h3><p data-en="A Flutter app for exploring Bitcoin price scenarios and local-currency equivalents — a calmer way to look at volatile numbers." data-pt="Um app Flutter para explorar cenários de preço do Bitcoin e equivalências em moeda local — uma forma mais calma de olhar para números voláteis.">A Flutter app for exploring Bitcoin price scenarios and local-currency equivalents — a calmer way to look at volatile numbers.</p><div class="tile-footer"><span>Flutter · Dart · APIs</span><a href="https://github.com/arthurhl" target="_blank" rel="noopener">GitHub ↗</a></div></article>
@@ -139,9 +153,40 @@
       </div>
     </section>
 
+    <section class="library-section" id="library">
+      <div class="page-frame">
+        <div class="section-kicker"><span>07</span><span data-en="The reading shelf" data-pt="A estante de leitura">The reading shelf</span></div>
+        <div class="library-heading"><h2 data-en="A shelf of<br><em>good questions.</em>" data-pt="Uma estante de<br><em>boas perguntas.</em>">A shelf of<br><em>good questions.</em></h2><p data-en="A growing record of what I read — books that become part of how I think about software, systems, and the work around them." data-pt="Um registro crescente do que leio — livros que passam a fazer parte da forma como penso sobre software, sistemas e o trabalho ao redor deles.">A growing record of what I read — books that become part of how I think about software, systems, and the work around them.</p></div>
+        <div class="library-layout">
+          <div class="bookshelf" aria-label="Growing illustrated bookshelf">
+            <div class="shelf-row shelf-row-top">
+              <figure class="library-book book-mean"><div class="book-cover"><img src="./assets/books/mean-stack-casa.png" alt="MEAN: Full stack JavaScript para aplicações web com MongoDB, Express, Angular e Node" loading="lazy"></div><figcaption><strong>MEAN Stack</strong><small>Flávio Almeida</small></figcaption></figure>
+              <figure class="library-book book-clean"><div class="book-cover"><img src="./assets/books/clean-code-cover.jpg" alt="Código Limpo" loading="lazy"></div><figcaption><strong>Código Limpo</strong><small>Robert C. Martin</small></figcaption></figure>
+              <figure class="library-book book-bug"><div class="book-cover"><img src="./assets/books/bug-hunting.jpg" alt="Real-World Bug Hunting" loading="lazy"></div><figcaption><strong>Real-World Bug Hunting</strong><small>Peter Yaworski</small></figcaption></figure>
+              <figure class="library-book book-data"><div class="book-cover"><img src="./assets/books/data-intensive.jpg" alt="Designing Data-Intensive Applications" loading="lazy"></div><figcaption><strong>Designing Data-Intensive Applications</strong><small>Martin Kleppmann</small></figcaption></figure>
+              <figure class="library-book book-ai"><div class="book-cover"><img src="./assets/books/engenharia-ia-chip.jpg" alt="Engenharia de IA, de Chip Huyen, edição O'Reilly" loading="lazy"></div><figcaption><strong>Engenharia de IA</strong><small>Chip Huyen · O'Reilly</small></figcaption></figure>
+            </div>
+            <div class="shelf-plank shelf-plank-middle" aria-hidden="true"></div>
+            <div class="shelf-row shelf-row-bottom" aria-label="Empty shelf for future books"></div>
+            <div class="shelf-plank shelf-plank-bottom" aria-hidden="true"></div>
+          </div>
+          <aside class="library-index" aria-label="Books in the reading shelf">
+            <div class="library-index-label" data-en="A few books I keep close" data-pt="Alguns livros que mantenho por perto">A few books I keep close</div>
+            <ul>
+              <li><b>MEAN Stack<small>Colin J. Ihrig · Adam Bretz</small></b></li>
+              <li><b>Código Limpo<small>Robert C. Martin</small></b></li>
+              <li><b>Designing Data-Intensive Applications<small>Martin Kleppmann</small></b></li>
+              <li><b>Engenharia de IA<small>Leonardo Pena</small></b></li>
+              <li><b>Real-World Bug Hunting<small>Peter Yaworski</small></b></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
     <section class="contact page-frame" id="contact">
       <div class="contact-sticker" data-en="LET’S<br>MAKE<br>GOOD<br>THINGS" data-pt="VAMOS<br>CRIAR<br>COISAS<br>BOAS">LET’S<br>MAKE<br>GOOD<br>THINGS</div>
-      <div class="contact-main"><div class="section-kicker"><span>07</span><span data-en="The next chapter" data-pt="O próximo capítulo">The next chapter</span></div><h2 data-en="Have a good<br><em>problem?</em>" data-pt="Tem um bom<br><em>problema?</em>">Have a good<br><em>problem?</em></h2><p data-en="Tell me what you’re working on, what feels stuck, or what you want to make sharper. I’m always up for a thoughtful conversation." data-pt="Me conte no que você está trabalhando, o que travou ou o que você quer deixar mais afiado. Estou sempre aberto a uma boa conversa.">Tell me what you’re working on, what feels stuck, or what you want to make sharper. I’m always up for a thoughtful conversation.</p><a class="button button-coral" href="mailto:arthurleitee@gmail.com"><span data-en="Say hello" data-pt="Dizer olá">Say hello</span><span class="button-arrow">↗</span></a></div>
+      <div class="contact-main"><div class="section-kicker"><span>08</span><span data-en="The next chapter" data-pt="O próximo capítulo">The next chapter</span></div><h2 data-en="Have a good<br><em>problem?</em>" data-pt="Tem um bom<br><em>problema?</em>">Have a good<br><em>problem?</em></h2><p data-en="Tell me what you’re working on, what feels stuck, or what you want to make sharper. I’m always up for a thoughtful conversation." data-pt="Me conte no que você está trabalhando, o que travou ou o que você quer deixar mais afiado. Estou sempre aberto a uma boa conversa.">Tell me what you’re working on, what feels stuck, or what you want to make sharper. I’m always up for a thoughtful conversation.</p><a class="button button-coral" href="https://wa.me/5528999550949" target="_blank" rel="noopener"><span data-en="Say hello" data-pt="Dizer olá">Say hello</span><span class="button-arrow">↗</span></a></div>
       <div class="contact-side"><div class="contact-rule"></div><a href="mailto:arthurleitee@gmail.com">arthurleitee@gmail.com <span>↗</span></a><a href="https://www.linkedin.com/in/arthurhl/" target="_blank" rel="noopener">linkedin.com/in/arthurhl <span>↗</span></a><a href="https://github.com/arthurhl" target="_blank" rel="noopener">github.com/arthurhl <span>↗</span></a><p class="contact-availability"><i></i><span data-en="Usually replies within 24 hours" data-pt="Geralmente respondo em até 24 horas">Usually replies within 24 hours</span></p></div>
     </section>
   </main>
@@ -155,11 +200,9 @@
 
     function updateThemeControl() {
       var isWarm = currentTheme === 'warm';
-      var label = document.querySelector('.theme-label');
       var moon = document.querySelector('.theme-icon-moon');
       var sun = document.querySelector('.theme-icon-sun');
       var toggle = document.getElementById('themeToggle');
-      if (label) label.textContent = isWarm ? (currentLang === 'pt' ? 'noturno' : 'night') : (currentLang === 'pt' ? 'claro' : 'warm');
       if (moon) moon.style.display = isWarm ? 'block' : 'none';
       if (sun) sun.style.display = isWarm ? 'none' : 'block';
       if (toggle) toggle.setAttribute('aria-label', isWarm ? (currentLang === 'pt' ? 'Mudar para modo noturno' : 'Switch to night mode') : (currentLang === 'pt' ? 'Mudar para modo claro' : 'Switch to warm mode'));
@@ -176,6 +219,22 @@
       try { localStorage.setItem('portfolio-lang', lang); } catch (e) { }
     }
 
+    var tickerTrack = document.querySelector('.ticker-track');
+    var tickerSet = tickerTrack ? tickerTrack.querySelector('.ticker-set') : null;
+    var tickerOffset = 0;
+    var tickerLast = performance.now();
+    function animateTicker(now) {
+      var elapsed = Math.min(now - tickerLast, 80);
+      tickerLast = now;
+      var loopWidth = tickerSet ? tickerSet.getBoundingClientRect().width : 0;
+      if (tickerTrack && loopWidth > 0) {
+        tickerOffset = (tickerOffset - elapsed * 0.04) % loopWidth;
+        tickerTrack.style.transform = 'translate3d(' + tickerOffset + 'px, 0, 0)';
+      }
+      requestAnimationFrame(animateTicker);
+    }
+    if (tickerTrack && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) requestAnimationFrame(animateTicker);
+
     function applyTheme(theme) {
       currentTheme = theme === 'night' ? 'night' : 'warm';
       document.documentElement.setAttribute('data-theme', currentTheme);
@@ -191,6 +250,45 @@
     document.getElementById('menuToggle').addEventListener('click', function () { menu.classList.add('open'); menu.setAttribute('aria-hidden', 'false'); });
     document.getElementById('menuClose').addEventListener('click', closeMenu);
     menu.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', closeMenu); });
+
+    var libraryBooks = document.querySelectorAll('.library-book');
+    var mobileShelfQuery = window.matchMedia('(max-width: 860px)');
+    function closeLibraryBooks() {
+      libraryBooks.forEach(function (book) {
+        book.classList.remove('is-open');
+        book.classList.add('is-closed');
+        book.setAttribute('aria-pressed', 'false');
+        book.blur();
+      });
+    }
+    libraryBooks.forEach(function (book) {
+      book.setAttribute('role', 'button');
+      book.setAttribute('tabindex', '0');
+      book.setAttribute('aria-pressed', 'false');
+      function toggleLibraryBook(event) {
+        if (!mobileShelfQuery.matches) return;
+        event.preventDefault();
+        event.stopPropagation();
+        var shouldOpen = !book.classList.contains('is-open');
+        closeLibraryBooks();
+        if (shouldOpen) {
+          book.classList.remove('is-closed');
+          book.classList.add('is-open');
+          book.setAttribute('aria-pressed', 'true');
+        }
+      }
+      book.addEventListener('click', toggleLibraryBook);
+      book.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === ' ') toggleLibraryBook(event);
+      });
+    });
+    document.addEventListener('click', function (event) {
+      if (mobileShelfQuery.matches && !event.target.closest('.library-book')) closeLibraryBooks();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (mobileShelfQuery.matches && event.key === 'Escape') closeLibraryBooks();
+    });
+    closeLibraryBooks();
 
     var nav = document.getElementById('navbar');
     window.addEventListener('scroll', function () { nav.classList.toggle('is-scrolled', window.scrollY > 20); }, { passive: true });
