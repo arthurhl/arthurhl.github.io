@@ -196,8 +196,8 @@ h1 em, h2 em { color: var(--coral); font-style: normal; }
 .projects { padding-block: 150px 170px; }
 .projects-heading, .toolbox-intro { display: flex; justify-content: space-between; align-items: end; gap: 35px; margin: 62px 0 72px; }
 .projects-heading p { max-width: 260px; margin: 0 0 7px; color: var(--muted); font-size: 14px; line-height: 1.5; }
-.project-collage { display: grid; grid-template-columns: 1.13fr .87fr; gap: 20px; align-items: start; }
-.project-tile { display: flex; flex-direction: column; min-height: 580px; padding: 23px; border: 1px solid var(--text); transition: transform .25s ease, box-shadow .25s ease; }
+.project-collage { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+.project-tile { display: flex; flex-direction: column; height: 580px; min-height: 580px; padding: 23px; border: 1px solid var(--text); transition: transform .25s ease, box-shadow .25s ease; }
 .project-tile:hover { transform: translate(-5px, -5px); box-shadow: 7px 7px 0 var(--text); }
 .tile-coral { background: var(--coral); color: var(--accent-text); }
 .tile-blue { background: var(--blue); color: var(--white); margin-top: 82px; }
@@ -247,11 +247,7 @@ h1 em, h2 em { color: var(--coral); font-style: normal; }
 .map-graticule { fill: none; stroke: color-mix(in srgb, var(--accent-text) 20%, transparent); stroke-width: .7; }
 .world-land { fill: color-mix(in srgb, var(--accent-text) 19%, var(--lime)); stroke: color-mix(in srgb, var(--accent-text) 52%, transparent); stroke-width: 1; stroke-linejoin: round; }
 .world-land-highlight { fill: color-mix(in srgb, var(--coral) 62%, var(--lime)); }
-.tile-blue { margin-top: 82px; }
-.tile-lime { margin-top: -30px; }
-.tile-ink { margin-top: 52px; }
-.tile-graph { align-self: start; margin-top: -30px; }
-.tile-coming { align-self: start; margin-top: 52px; }
+.tile-blue, .tile-lime, .tile-ink, .tile-graph, .tile-coming { align-self: stretch; margin-top: 0; }
 .tile-graph .tile-art, .tile-coming .tile-art { height: 240px; min-height: 240px; }
 .project-tile h3 { margin: auto 0 13px; font-size: 30px; font-weight: 500; letter-spacing: -.06em; }
 .project-tile p { max-width: 480px; margin: 0 0 25px; font-size: 14px; line-height: 1.5; }
@@ -445,7 +441,7 @@ h1 em, h2 em { color: var(--coral); font-style: normal; }
   .timeline-company a { display: block; font-size: 18px; }
   .timeline-company span { display: block; margin-top: 8px; }
   .project-collage { grid-template-columns: 1fr; gap: 14px; }
-  .project-tile, .tile-blue, .tile-lime, .tile-ink, .tile-graph, .tile-coming { margin-top: 0; min-height: 0; }
+  .project-tile, .tile-blue, .tile-lime, .tile-ink, .tile-graph, .tile-coming { height: auto; margin-top: 0; min-height: 0; }
   .library-layout { grid-template-columns: 1fr; gap: 48px; }
   .bookshelf { padding: 18px 14px 18px; box-shadow: 7px 7px 0 var(--shelf-wood-dark); }
   .shelf-row { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); justify-items: center; gap: 0; min-height: 190px; padding: 0 6px 16px; }
